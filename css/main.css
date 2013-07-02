@@ -1,0 +1,133 @@
+/* http://css-tricks.com/snippets/css/ribbon */
+
+.thumb {
+	background:#DBDBDB;
+	position: relative;
+	min-height: 150px;  
+}
+.countdown {
+	text-align: right;	
+	font-family: 'Calligraffitti', cursive;
+	font-size: 25px;
+}
+.stripe {
+	width:100%;
+	background: #18BFBC;
+	height: 25px;
+	margin: 7px 0 20px;
+}
+.slider {
+	text-align: right;
+	margin-bottom: 30px;
+}
+.slider img {
+	height: 300px;
+}
+.logo {
+	/*font-family: 'Calligraffitti', cursive;*/
+	font-family: 'Alex Brush', cursive;
+	font-size: 60px;
+	color: #168283;
+	position: relative;
+	margin: 10px 0 0px;
+	position: relative;
+}
+.logo .and {
+	background: #18BFBC;
+	color: white;
+	border-radius: 50%;
+	width: 120px;
+	height: 120px; 
+	margin:0;
+	padding:0px;
+	top: 20px;
+	position: relative;
+	display: inline-block;
+}
+.logo .and span {
+	margin: 10px;
+	margin-top: 40px;
+	display: inline-block;
+	/*font-family: 'Sofia', cursive;*/
+	padding: 26px 15px;
+	font-size: 1.75em;
+}
+.navbar {
+	background: white;
+}
+.navbar-fixed-top {
+	top: 10px;
+}
+.navbar-inner {
+	background: none;
+	border: 0;
+	-webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	box-shadow: none !important;
+}
+.navbar .nav>li>a {
+	color: #18BFBC; 
+	font-family: 'Waiting for the Sunrise', cursive;
+	font-size: 20px;
+}
+.nav-collapse .nav>li {
+	margin-right: 30px;
+}
+.nav-collapse .nav>li>a:hover, 
+.nav-collapse .nav>li>a:focus, 
+.nav-collapse .dropdown-menu a:hover, 
+.nav-collapse .dropdown-menu a:focus {
+	background-color:#18BFBC;	
+	color: white !important;
+	text-shadow: none;
+}
+.nav-collapse .nav>.active>a:hover, 
+.nav-collapse .nav>.active>a:focus, 
+.nav-collapse .dropdown-menu a:hover, 
+.nav-collapse .dropdown-menu a:focus {
+	background-color:white;	
+	color: #18BFBC !important;
+	text-shadow: none;
+}
+.navbar .nav>.active>a, .navbar .nav>.active>a:hover, .navbar .nav>.active>a:focus {
+	color: #18BFBC;
+	background: none;
+	border-bottom: 3px solid  #18BFBC;
+	-webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	box-shadow: none !important;
+}
+
+.ribbon { font-family: 'Shadows Into Light', cursive;  font-size: 20px;}
+
+.ribbon { 
+	width: 75%;
+	bottom:10%;
+	position: absolute;
+	background: #18BFBC;
+	color: #fff;
+	text-align: center;
+	margin-left:-16px;
+} 
+
+.ribbon .ribbon-content:before {
+	content: "";
+	position: absolute;
+	display: block;
+	border-style: solid;
+	border-color: #17807E transparent transparent transparent;
+	bottom: -0.76em;
+	left: 0;
+	border-width: 0.8em 0 0 0.8em;
+}
+
+.ribbon .ribbon-content:after {
+	content: "";
+	position: absolute;
+	display: block;
+	border-style: solid;
+	border-color: #18BFBC transparent transparent transparent;
+	top: 0px;
+	right: -1.25em;
+ 	border-width: 2.0em 1.3em 0 0;
+}
