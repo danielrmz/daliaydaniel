@@ -19,9 +19,12 @@
 .slider {
 	text-align: right;
 	margin-bottom: 30px;
+	background:url(../img/us.jpg) no-repeat 70%;
+	height:300px;
 }
 .slider img {
 	height: 300px;
+	width: 70%;
 }
 .logo {
 	/*font-family: 'Calligraffitti', cursive;*/
@@ -66,6 +69,11 @@
 	-moz-box-shadow: none !important;
 	box-shadow: none !important;
 }
+.nav {
+	width:70%;
+	margin: 0 auto !important;
+	float: none !important;
+}
 .navbar .nav>li>a {
 	color: #18BFBC; 
 	font-family: 'Waiting for the Sunrise', cursive;
@@ -78,8 +86,10 @@
 .nav-collapse .nav>li>a:focus, 
 .nav-collapse .dropdown-menu a:hover, 
 .nav-collapse .dropdown-menu a:focus {
-	background-color:#18BFBC;	
-	color: white !important;
+	/*background-color:#18BFBC;*/
+	border-bottom:3px solid #18BFBC;
+	/*color: white;*/
+	color:#18BFBC;
 	text-shadow: none;
 }
 .nav-collapse .nav>.active>a:hover, 
@@ -89,6 +99,16 @@
 	background-color:white;	
 	color: #18BFBC !important;
 	text-shadow: none;
+}
+@media (max-width: 979px) {
+.nav-collapse .nav>li>a:hover, .nav-collapse .nav>li>a:focus, .nav-collapse .dropdown-menu a:hover, .nav-collapse .dropdown-menu a:focus {
+	color: white !important;
+	background: #18BFBC !important;
+}
+.nav-collapse .nav>.active>a:hover, .nav-collapse .nav>.active>a:focus, .nav-collapse .dropdown-menu a:hover, .nav-collapse .dropdown-menu a:focus {
+	color: #18BFBC !important;
+	background: none !important;
+}
 }
 .navbar .nav>.active>a, .navbar .nav>.active>a:hover, .navbar .nav>.active>a:focus {
 	color: #18BFBC;
