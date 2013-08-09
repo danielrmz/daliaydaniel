@@ -2,7 +2,11 @@
 	"name": "daliaydaniel",
 	"version": "0.0.1",
 	"dependencies": {
-		"express":"*"
+		"express":"*",
+		"ejs":"*",
+		"express-pjax": "*",
+		"express-partials": "*",
+		"express3-ejs-layout": "*"
 	},
 	"engines": {
 		"node": "0.10.x",
