@@ -42,7 +42,7 @@ function InitializeViews() {
 function ResizeBanner(pageId, callback, isLoad) {
 	callback = callback || function() { };
 
-	var $menu   = typeof pageId == "string" ? $(".menu a[href*=" + pageId.replace("/","") + "]") : $(pageId);
+	var $menu   = typeof pageId == "string" ? $(".menu a[href*=" + (pageId == "/" ? "home" : pageId.replace("/","") ) + "]") : $(pageId);
 	var $banner = $(".banner .item, .banner");
 	var smallSize = $(".banner").data("small");
 	var bigSize = $(".banner").data("big");
