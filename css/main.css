@@ -472,47 +472,110 @@ a.place-contents:hover {
 	border-width: 14px 10px 14px 0px;
 	background: transparent !important;
 	float:left;
+} 
+
+.gallery {
+	text-align: center;
 }
 
- /*
-.ribbon:before, .ribbon:after {
-   content: '';
-   position: absolute;
-   display: block;
-   bottom: -1em;
-   border: 1.5em solid #f8c6bb;
-   z-index: -1;
-   }
-.ribbon:before {
-   left: -2em;
-   border-right-width: 1.5em;
-   border-left-color: transparent;
-   -webkit-box-shadow: rgba(000,000,000,0.4) 1px 1px 1px;
-   -moz-box-shadow: rgba(000,000,000,0.4) 1px 1px 1px;
-   box-shadow: rgba(000,000,000,0.4) 1px 1px 1px;
-   }
-.ribbon:after {
-   right: -2em;
-   border-left-width: 1.5em;
-   border-right-color: transparent;
-   -webkit-box-shadow: rgba(000,000,000,0.4) -1px 1px 1px;
-   -moz-box-shadow: rgba(000,000,000,0.4) -1px 1px 1px;
-   box-shadow: rgba(000,000,000,0.4) -1px 1px 1px;
-   }
-.ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
-   border-color: #f6a999 transparent transparent transparent;
-   position: absolute;
-   display: block;
-   border-style: solid;
-   bottom: -1em;
-   content: '';
-   }
-.ribbon .ribbon-content:before {
-   left: 0;
-   border-width: 1em 0 0 1em;
-   }
-.ribbon .ribbon-content:after {
-   right: 0;
-   border-width: 1em 1em 0 0;
-   } 
-  */
+.gallery .event {
+	background: url(../img/Graphic2.png) no-repeat;
+	display: inline-block; 
+	width: 230px;
+	height: 135px;
+	margin: 10px;
+	padding: 20px;
+	color: white;
+	font-size: 20px;
+	vertical-align: middle;
+	text-align: center;
+	position: relative;
+}
+
+.gallery .event.e1 { background-position: 0 0;}
+.gallery .event.e2 { background-position: -237px 0;}
+.gallery .event.e3 { background-position: -474px 0; text-transform: uppercase;}
+.gallery .event.e4 { background-position: 0 -142px; text-transform: uppercase;}
+.gallery .event.e5 { background-position: -237px -142px; text-transform: uppercase;}
+.gallery .event.e6 { background-position: -474px -142px; text-transform: uppercase;}
+.gallery .event.e7 { background-position: 0 -286px;}
+.gallery .event.e8 { background-position: -237px  -286px; font-family: 'Pompiere', cursive; text-transform: lowercase;}
+.gallery .event.e9 { background-position: -474px  -286px; font-size: 40px; font-family: 'Pompiere', cursive; text-transform: uppercase;}
+
+.somos {
+	font-family: 'Waiting for the Sunrise', cursive;
+	font-size: 75px;
+	position: absolute;
+	left: 37px;
+	top: -4px;
+}
+
+.novios {
+	font-family: 'Clicker Script', cursive;
+	font-size: 40px;
+	position: absolute;
+	right: 30px;
+	bottom: 5px;
+}
+
+.estamos {
+	font-family: 'Clicker Script', cursive;
+	font-size: 44px;
+	text-transform: lowercase;
+	position: absolute;
+	top: 18px;
+	left: 62px;
+}
+
+.comprometidos {
+	font-family: 'Cabin', sans-serif;
+	text-transform: uppercase; 
+	position: absolute;
+	top: 65px;
+	left: 34px;
+}
+
+.pedida {
+	font-family: 'Pompiere', cursive;
+	font-size: 30px;
+	margin-top: 10px;
+	display: block;
+}
+
+.presentacion {
+	font-family: 'Advent Pro', sans-serif;
+	font-size: 24px;
+	display: block;
+	margin-top: 30px;
+}
+
+.civil { 
+	font-family: 'Finger Paint', cursive;
+	font-size: 45px;
+	display: block;
+	margin-top: 17px;
+}
+
+.hasta {
+	font-family: 'Waiting for the Sunrise', cursive;
+	font-size: 30px;
+	line-height: 1;
+	margin-top: 5px;
+}
+
+.tuyyo {
+	font-family: 'Loved by the King', cursive;
+	font-size: 32px;
+}
+
+.honeymoon {
+	font-family: 'Shadows Into Light Two', cursive;
+	font-size: 42px;
+	font-weight: 300;
+	margin-top: 15px;
+}
+.photos {
+	font-family: 'Pompiere', cursive;
+	margin-top: 12px;
+	font-size: 50px;
+}

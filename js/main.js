@@ -105,7 +105,7 @@ function CalculateCountdown() {
  */
 function preload(arrayOfImages) {
     $(arrayOfImages).each(function(){
-        $('<img/>')[0].src = this;
+        $('<img async="true" />')[0].src = this;
     });
 }
 
