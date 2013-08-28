@@ -579,3 +579,39 @@ a.place-contents:hover {
 	margin-top: 12px;
 	font-size: 50px;
 }
+
+.gallery a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.gallery .disabled {
+	opacity: 0.3;
+	cursor: default;
+}
+.thumbs .empty {
+	text-align: center;
+	font-size: 20px;
+	font-weight: 300;
+}
+.image {text-align: center; margin-bottom: 10px; }
+.image img {
+	max-width: 539px;
+}
+.thumbs span {
+	background: black;
+	float: left;
+	min-width: 75px;
+	min-height: 75px;
+	max-width: 76.85px;
+	max-height:75px;
+	display: block;
+	overflow: hidden;
+	cursor: pointer;
+}
+.thumbs img {
+	max-width: 100px;
+}
+.modal-content {
+	border-radius: 0;
+}

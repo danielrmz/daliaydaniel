@@ -1,0 +1,12 @@
+
+
+<form method="post" name="auth" action="/login">
+	<div style="text-align:center; margin: 0 auto; max-width: 300px" class="row">
+		<div class="alert alert-danger" <%if (error == "") { %>style="display:none;"<% } %>><%- error %></div>
+		<div class="col-lg-9">
+			<input type="password"  name="pwd" class="form-control input-md" placeholder="Contrase&ntilde;a..." /> 
+		</div>
+		<input type="submit" value="Entrar" class="btn btn-primary" />
+		<input type="hidden" name="returnTo" value="<%- callback %>" />
+	</div>
+</form>
