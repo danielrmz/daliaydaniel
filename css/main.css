@@ -296,7 +296,7 @@ body {
 	color: #727377;
 }
 .ribbon-footer {
-	color: #F7A79C;
+	color: #1ABFBD;
 	font-size: 23px;
 	margin-top: 7px;
 }
@@ -318,7 +318,7 @@ body {
 
 .events .time .line {
 	display: inline-block;
-	background: #F7A79C;
+	background: #1ABFBD;
 	margin-top: 15px;
 	width: 34px;
 	height: 2px;
@@ -329,7 +329,7 @@ body {
 }
 
 .events .invite {
-	color: #F9A392;
+	color: #aaa;
 	font-family: 'Yellowtail', cursive;
 	font-size: 25px;
 	margin-top: 10px;
@@ -340,7 +340,7 @@ body {
 	position: relative;
 }
 .ribbon-container .ribbon .ribbon-front {
-	background-color: #FBCEC9;	height: 95px;
+	background-color: #80E5E4;	height: 95px;
 	width: 364px;
 	position: relative;
 	left:-32px;
@@ -380,7 +380,7 @@ body {
 .ribbon-container .ribbon .ribbon-edge-topleft,
 .ribbon-container .ribbon .ribbon-edge-bottomleft {
 	left: -32px;
-	border-color: transparent #F7A79C transparent transparent;
+	border-color: transparent #1ABFBD transparent transparent;
 }
 
 .ribbon-container .ribbon .ribbon-edge-topleft {
@@ -394,7 +394,7 @@ body {
 .ribbon-container .ribbon .ribbon-edge-topright,
 .ribbon-container .ribbon .ribbon-edge-bottomright {
 	left: 300px;
-	border-color: transparent transparent transparent #F7A79C;
+	border-color: transparent transparent transparent #1ABFBD;
 }
 
 .ribbon-container .ribbon .ribbon-edge-topright {
@@ -425,13 +425,13 @@ body {
 }
 .ribbon-container .ribbon .ribbon-back-right {
 	border-style: solid;
-	border-color: #F8C6BD transparent;
+	border-color: #9FF1EF transparent;
 	border-width: 48px 24px 48px 0;
 	background: transparent !important;
 }
 .ribbon-container .ribbon .ribbon-back-left {
 	border-style: solid;
-	border-color: #F8C6BD transparent;
+	border-color: #9FF1EF transparent;
 	border-width: 48px 0 48px 24px;
 	background: transparent !important;
 }
@@ -443,7 +443,7 @@ body {
 }
 .place-contents {
 	display: inline-block;
-	background: #F8C6BD;
+	background: #80E5E4;
 	color: white;
 	text-transform: uppercase;
 	padding: 4px;
@@ -458,7 +458,7 @@ a.place-contents:hover {
 	width: 24px;
 	height: 23px;
 	border-style: solid;
-	border-color: #F8C6BD transparent;
+	border-color: #80E5E4 transparent;
 	border-width: 14px 0 14px 10px;
 	background: transparent !important;
 	float:left;
@@ -468,7 +468,7 @@ a.place-contents:hover {
 	width: 24px;
 	height: 23px;
 	border-style: solid;
-	border-color: #F8C6BD transparent;
+	border-color: #80E5E4 transparent;
 	border-width: 14px 10px 14px 0px;
 	background: transparent !important;
 	float:left;

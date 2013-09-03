@@ -3,15 +3,67 @@
 	{
 		"selected_items":
 		[
+			[
+				"current",
+				"currentPicture"
+			],
+			[
+				"backg",
+				"background"
+			],
+			[
+				"backgrou",
+				"background-position"
+			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "index.html",
+			"file": "js/main.js",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 15478,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "pages/contact.html",
+			"settings":
+			{
+				"buffer_size": 857,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "start.js",
+			"settings":
+			{
+				"buffer_size": 1896,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "pages/login.html",
+			"settings":
+			{
+				"buffer_size": 522,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "pages/gallery.html",
+			"settings":
+			{
+				"buffer_size": 1449,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "css/main.css",
+			"settings":
+			{
+				"buffer_size": 11911,
 				"line_ending": "Unix"
 			}
 		}
@@ -19,17 +71,29 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 0.0,
+		"height": 147.0,
 		"selected_items":
 		[
 		],
-		"width": 0.0
+		"width": 575.0
 	},
 	"console":
 	{
-		"height": 0.0,
+		"height": 126.0,
 		"history":
 		[
+			"open 'Terminal'",
+			"open terminal",
+			"open",
+			"io.dir",
+			"import io",
+			"import file",
+			"import fs",
+			"list",
+			"wher",
+			"ls",
+			"./start",
+			"./st"
 		]
 	},
 	"distraction_free":
@@ -43,10 +107,27 @@
 	},
 	"file_history":
 	[
+		"/Users/daniel/Desktop/daliaydaniel/layout.ejs",
+		"/Users/daniel/Desktop/daliaydaniel/pages/layout.ejs",
+		"/Users/daniel/Desktop/daliaydaniel/js/app.js",
+		"/Users/daniel/Desktop/daliaydaniel/pages/index.html",
+		"/Users/daniel/Desktop/daliaydaniel/pages/home.html",
+		"/Users/daniel/Desktop/daliaydaniel/pages/events.html",
+		"/Users/daniel/Desktop/daliaydaniel/dd.sublime-project",
+		"/Users/daniel/Desktop/daliaydaniel/pages/contact.html",
+		"/Users/daniel/Desktop/daliaydaniel/pages/lovestory.html",
+		"/Users/daniel/Desktop/daliaydaniel/js/main.js",
+		"/Users/daniel/Desktop/daliaydaniel/start.js",
+		"/Users/daniel/Desktop/daliaydaniel/package.json",
+		"/Users/daniel/Desktop/daliaydaniel/pages/gallery.html",
+		"/Users/daniel/Desktop/daliaydaniel/css/main.css",
+		"/Users/daniel/Desktop/daliaydaniel/lovestory.html",
+		"/Users/daniel/Desktop/daliaydaniel/index.html",
+		"/Users/daniel/Desktop/daliaydaniel/Procfile"
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -60,6 +141,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			".ribbon-edge-bottomleft",
+			"ribbon-front",
+			"href=",
+			"a=",
+			"font-fami",
+			"font",
+			"complete"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -77,24 +165,107 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "index.html",
+					"file": "js/main.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 15478,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								10973,
+								10973
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "pages/contact.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 857,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								510,
+								510
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "start.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1896,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1312,
+								1312
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 270.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "pages/login.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 522,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								48,
+								48
 							]
 						],
 						"settings":
@@ -103,6 +274,60 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "pages/gallery.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1449,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								408,
+								408
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 18.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "css/main.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11911,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5856,
+								5856
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 4384.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -175,7 +400,7 @@
 	{
 	},
 	"show_minimap": true,
-	"show_open_files": false,
+	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 150.0,

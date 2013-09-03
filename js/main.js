@@ -1,5 +1,3 @@
-// Initializes. 
-
 
 $(function() {
 	CalculateCountdown();
@@ -43,6 +41,8 @@ function InitializeGallery() {
 		$(".thumbs").append(contents);
 		isActive = true;
 
+		$(".js-pic-0").parent().click();
+
 		e.preventDefault();
 		return false;
 	});
@@ -53,7 +53,6 @@ function InitializeGallery() {
 		
 		$(".image").fadeOut(function() {
 			$(this).html("").append("<img src='"+imgUrl+"'/>").fadeIn();
-			console.log(currentPicture);
 		});
 	});
 
@@ -91,6 +90,9 @@ function InitializeGallery() {
   	});
 }
 
+/**
+ * Initializes pjax events
+ */
 function InitializeViews() {
 	$(window).resize(DisplaySecretPanels);
 	$(document).pjax('.menu a', '.content');
@@ -120,6 +122,9 @@ function InitializeViews() {
 	ResizeBanner(window.location.pathname, null, true); 
 }
 
+/**
+ * Resizes the main banner based on the configuration set on the specified menu link
+ */
 function ResizeBanner(pageId, callback, isLoad) {
 	callback = callback || function() { };
 
@@ -148,6 +153,9 @@ function ResizeBanner(pageId, callback, isLoad) {
 	}
 }
 
+/**
+ * When a certain height is met, display the hidden panels if any exist. 
+ */
 function DisplaySecretPanels() {
 	if(window.location.pathname == "/" || window.location.pathname == "/home") {
 		if($(window).height() > 650) {
@@ -191,6 +199,9 @@ function preload(arrayOfImages) {
 }
 
 
+/**
+ * Preloads the banner images.
+ */
 function preloadImages() {
 	var arr = [];
 	var max = 5;

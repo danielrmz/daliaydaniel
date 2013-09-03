@@ -1,3 +1,7 @@
+//
+// Dalia y Daniel website. 
+// Serves static pages
+// 
 
 var path     = require('path'),
     express  = require('express'),
@@ -29,16 +33,21 @@ app.configure(function() {
 
 // Standard view definition.
 
+var secure_pages = ["gallery.html"];
+var allowed_pwds = ["3a79c4535726547aa453d83dcc6435b0", "6d071901727aec1ba6d8e2497ef5b709", "cee8d6b7ce52554fd70354e37bbf44a2"];
+
+app.get('/', function(req, res) {
+	res.render("home.html");
+});
+
 app.get('/:page', function(req, res) { 
 	var page = req.params.page;
 	page = page.replace(".html","") + ".html"; 
 
-	if(!req.session.auth && page == "gallery.html") {
+	if(!req.session.auth && secure_pages.indexOf(page) >= 0) {
 		res.render("login.html", { callback: page, error: "" });
 		return;
 	}
-
-
 
 	res.renderPjax(page,{ callback: "", error: "" }); 
 }); 
@@ -52,8 +61,7 @@ app.post("/login", function(req, res) {
 	var redirectTo = req.body.returnTo || "home";
 	if(redirectTo == "login") { redirectTo = "home"; }
 	
-	if(sent == "3a79c4535726547aa453d83dcc6435b0" || sent == "6d071901727aec1ba6d8e2497ef5b709"
-		|| sent == "cee8d6b7ce52554fd70354e37bbf44a2") {
+	if(allowed_pwds.indexOf(sent) >= 0) {
 		req.session.auth = true;
 		redirectTo = redirectTo.replace(".html","") + ".html"; 
 
@@ -66,9 +74,7 @@ app.post("/login", function(req, res) {
 	res.render("login.html", { callback: "", error: error } );	
 });
 
-app.get('/', function(req, res) {
-	res.render("home.html");
-});
+
 
 // Start Application
 

@@ -3,7 +3,7 @@
 
 # TEAM
 
-    Daniel Ramirez -- Groom -- @danielrmz
+    Daniel Ramirez -- Groom 
     Dalia Magallanes -- Bride
 
 # TECHNOLOGY COLOPHON
