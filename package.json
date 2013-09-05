@@ -6,7 +6,8 @@
 		"ejs":"*",
 		"express-pjax": "*",
 		"express-partials": "*",
-		"express3-ejs-layout": "*"
+		"express3-ejs-layout": "*",
+		"request": "*"
 	},
 	"engines": {
 		"node": "0.10.x",
