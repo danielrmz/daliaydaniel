@@ -7,8 +7,53 @@ $(function() {
 	InitializeGallery();
 
 	$(".love").click(function() { 
-
+		$(".save").show().modal();
 	});
+
+	$(document).on("focus", "#mensaje", function() {  
+		$(".js-hidden").removeClass("hidden").slideDown();
+	});
+
+	$(document).on("blur", "#mensaje", function() {  
+		if($(this).val().trim() != "") {
+			return;
+		}
+		$(".js-hidden").slideUp();
+	});
+
+	$(document).on("click", ".js-new-guestbook", function() {   
+		var $nombre = $("#nombre"),
+			$correo = $("#correo"),
+			$mensaje = $("#mensaje");
+
+		if($nombre.val().trim() == "" || $correo.val().trim() == "" || $mensaje.val().trim() == "")
+		{
+			alert('Porfavor introduzca todos los datos');
+			return;
+		}
+
+		$.post("/guestbook/new", { "name": $nombre.val().trim(), "email": $correo.val().trim(), "comment": $mensaje.val().trim() },
+			function(data) { 
+				$nombre.val("");
+				$correo.val("");
+				$mensaje.val("");
+				$(".js-hidden").slideUp();
+
+				data = $.parseJSON(data);
+				$(".entries").append("<li><div class='name'> " + data.name + " </div><div class='comment'>" + data.comment + "</div></li>");
+			});
+	}); 
+
+	if((location + "").indexOf("guestbook") >= 0) {
+		$.getJSON("/guestbook/list", function(data) { 
+			for(var i = 0; i < data.length; i++) {
+				var entry = data[i];
+
+				$(".entries").append("<li><div class='name'> " + entry.name + " </div><div class='comment'>" + entry.comment + "</div></li>");
+			}
+		});
+	}
+ 
 });
 
 preloadImages();
@@ -24,12 +69,14 @@ function InitializeGallery() {
 
 	for(var g in galleries) {
 		if(galleries.hasOwnProperty(g)) {
-			$.getJSON("/gallery/" + g, (function(album) { return function(data) { 
+			$.getJSON("/gallery/" + g, (function(album) { return function(data) {
+				if(data.error && data.error.message) { return; }
+
 				var photos = data.data;
 
 				var list = [];
 				for(var idx = 0; idx < photos.length; idx++) {
-					list.push(photos[idx].images[3].source);
+					list.push(photos[idx].images[2].source);
 				} 
 				
 				galleries[album] = list;

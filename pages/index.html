@@ -27,9 +27,9 @@
                 </div>
                 <div class="shortcuts pull-right">
                     <ul>
-                        <li><a href="#" class="love" title="Save the date!"></a></li>
-                        <li><a href="#" class="guestbook" title="Guestbook"></a></li>
-                        <li><a href="#" class="rsvp" title="RSVP"></a></li>
+                        <li><a href="javascript:;" class="love" title="Save the date!"></a></li>
+                        <li><a href="guestbook" class="guestbook" title="Guestbook"></a></li>
+                        <!-- <li><a href="#" class="rsvp" title="RSVP"></a></li> -->
                     </ul>
                 </div>
             </div>
@@ -72,6 +72,39 @@
             <div class="footer"></div>
         </div>
 
+        <div class="modal fade save modal-wide">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> 
+              </div>
+              <div class="modal-body">
+                <div id="carousel"  class="carousel fade">
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="item active bg1"></div>
+                        <div class="item bg2"></div>
+                        <div class="item bg3"></div>
+                        <div class="item bg4"></div>
+                        <div class="item bg5"></div>
+                        <div class="item bg6"></div>
+                    </div>
+                </div>
+                <div class="fb-like" data-href="http://www.daliaydaniel.com" data-width="450" data-layout="button_count" data-show-faces="true" data-send="true"></div>
+                <div class="clearfix"></div>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+       
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=230951067056344";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>

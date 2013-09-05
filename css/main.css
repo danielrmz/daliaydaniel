@@ -33,6 +33,27 @@ body {
 .banner.big .bg5 { background: url(../img/banners/5-big.png); }
 .banner.big .bg6 { background: url(../img/banners/6-big.png); }
 
+.save.modal .modal-dialog { width:960px;    }
+.save .item { height: 400px; width: 960px; }
+.save .modal-body { padding: 0; }
+.save .modal-header {
+	position: absolute;
+	z-index: 99999;
+	right: 0;
+	border-bottom:0;
+}
+.save .fb-like {
+	position: absolute;
+	right: 10px;
+	bottom: 4px;
+	z-index: 1;
+}
+.save .bg1 { background: url(../img/save/1.jpg); }
+.save .bg2 { background: url(../img/save/2.jpg); }
+.save .bg3 { background: url(../img/save/3.jpg); }
+.save .bg4 { background: url(../img/save/4.jpg); }
+.save .bg5 { background: url(../img/save/5.jpg); }
+.save .bg6 { background: url(../img/save/6.jpg); }
 
 .clearfix { clear: both; }
 .countdown {
@@ -632,3 +653,19 @@ a.place-contents:hover {
 	display:inline-block;
 }
 .message a { color: black; }
+
+.entries {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.entries li {
+	float: left;
+	width: 200px;
+	border:1px solid #1ABFBD;
+	padding: 5px;
+}
+.entries .name {
+	font-weight: bold;
+}
