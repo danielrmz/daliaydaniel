@@ -143,7 +143,7 @@ app.post("/guestbook/new", function(req, res) {
 			}
 		);
 
-		res.send('{ "name": "'+req.body.name+'", "comment": "'+req.body.email+'" }');
+		res.send('{ "name": "'+req.body.name+'", "comment": "'+comment+'" }');
 	});
 });
 
