@@ -25,6 +25,7 @@ $(function() {
 		var $nombre = $("#nombre"),
 			$correo = $("#correo"),
 			$mensaje = $("#mensaje");
+			$lugar = $("#location");
 
 		if($nombre.val().trim() == "" || $correo.val().trim() == "" || $mensaje.val().trim() == "")
 		{
@@ -32,15 +33,26 @@ $(function() {
 			return;
 		}
 
-		$.post("/guestbook/new", { "name": $nombre.val().trim(), "email": $correo.val().trim(), "comment": $mensaje.val().trim() },
+		var data = { 
+					"name": $nombre.val().trim(), 
+					"email": $correo.val().trim(), 
+					"comment": $mensaje.val().trim(),
+					"location": $lugar.val().trim()
+				};
+
+		$.post("/guestbook/new", data,
 			function(data) { 
 				$nombre.val("");
 				$correo.val("");
 				$mensaje.val("");
 				$(".js-hidden").slideUp();
 
+
 				data = $.parseJSON(data);
-				$(".entries").append("<li><div class='name'> " + data.name + " </div><div class='comment'>" + data.comment + "</div></li>");
+				var en = getGBEntryTemplate(data); 
+				var $item = $(en).hide();
+				$(".entries li:first").after($item);
+				$item.fadeIn(); 
 			});
 	}); 
 
@@ -49,12 +61,26 @@ $(function() {
 			for(var i = 0; i < data.length; i++) {
 				var entry = data[i];
 
-				$(".entries").append("<li><div class='name'> " + entry.name + " </div><div class='comment'>" + entry.comment + "</div></li>");
+				$(".entries").append(getGBEntryTemplate(entry));
 			}
 		});
 	}
  
 });
+
+function getGBEntryTemplate(entry) {
+	var $temp = $("#entry").html();
+	moment.lang('es');
+
+	date = moment(new Date(entry.date)).fromNow(); 
+	return $temp.replace("{{name}}", entry.name)
+				.replace("{{date}}", date)
+				.replace("{{comment}}", entry.comment)
+				.replace("{{location}}", entry.location)
+				.replace("{{email}}", entry.email)
+				.replace(/\n/gi, '' )
+				.trim();
+}
 
 preloadImages();
 

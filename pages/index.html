@@ -15,6 +15,13 @@
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/components/countdown.css">
+        <link rel="stylesheet" href="css/components/save.css">
+        <link rel="stylesheet" href="css/pages/contact.css">
+        <link rel="stylesheet" href="css/pages/events.css">
+        <link rel="stylesheet" href="css/pages/gallery.css">
+        <link rel="stylesheet" href="css/pages/guestbook.css">
+        <link rel="stylesheet" href="css/pages/story.css">
         <link href='http://fonts.googleapis.com/css?family=Yellowtail|Oxygen:400,300,700|Calligraffitti|Nunito:400,300,700|Varela+Round|Pompiere' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Cabin:400,400italic|Waiting+for+the+Sunrise|Clicker+Script|Loved+by+the+King|Squada+One|Shadows+Into+Light+Two|Advent+Pro:400,500|Annie+Use+Your+Telescope|Finger+Paint|The+Girl+Next+Door|Give+You+Glory' rel='stylesheet' type='text/css'>
     </head>
@@ -97,6 +104,8 @@
           </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
        
+      
+
         <div id="fb-root"></div>
         <script>(function(d, s, id) {
           var js, fjs = d.getElementsByTagName(s)[0];
@@ -110,7 +119,75 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 
         <script src="js/vendor/bootstrap.min.js"></script>
-        <script src="js/vendor/jquery.pjax.js"></script>
+        <script src="js/vendor/jquery.pjax.js"></script> 
+        <script src="node_modules/moment/moment.js"></script>
+        <script src="js/vendor/moment-es.js"></script>
         <script src="js/main.js"></script>
+          <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+<script type="text/javascript"> 
+  var geocoder;
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
+  } 
+//Get the latitude and the longitude;
+function successFunction(position) {
+    var lat = position.coords.latitude;
+    var lng = position.coords.longitude;
+    codeLatLng(lat, lng);
+}
+
+function errorFunction(){
+    alert("Geocoder failed");
+} 
+
+function codeLatLng(lat, lng) {
+    var geocoder = new google.maps.Geocoder();
+    var latlng = new google.maps.LatLng(lat, lng);
+    geocoder.geocode({'latLng': latlng}, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+        
+        if (results[1]) {
+            //formatted address
+            //alert(results[0].formatted_address)
+            //find country name
+            var state = null;
+            var city = null;
+            var country = null;
+
+            for (var i=0; i<results[0].address_components.length; i++) {
+                for (var b=0;b<results[0].address_components[i].types.length;b++) {
+                    //there are different types that might hold a city admin_area_lvl_1 usually does in come cases looking for sublocality type will be more appropriate
+                    if (results[0].address_components[i].types[b] == "administrative_area_level_1") {
+                        //this is the object you are looking for
+                        state = results[0].address_components[i];
+                        break;
+                    }
+
+                    if (results[0].address_components[i].types[b] == "locality") {
+                        //this is the object you are looking for
+                        city = results[0].address_components[i];
+                        break;
+                    }
+
+                    if (results[0].address_components[i].types[b] == "country") {
+                        //this is the object you are looking for
+                        country = results[0].address_components[i];
+                        break;
+                    }
+                }
+            }
+            $("#location").val(city.short_name + ", " + state.short_name); 
+            //city data
+            //alert(city.short_name + " " + city.long_name)
+        } else {
+          alert("No results found");
+        }
+      } else {
+        alert("Geocoder failed due to: " + status);
+      }
+    });
+  }
+</script> 
     </body>
 </html>

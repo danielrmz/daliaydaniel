@@ -11,11 +11,13 @@ var path     = require('path'),
     request  = require("request"),
     mongoose = require('mongoose'),
     mailgun  = require('mailgun').Mailgun,
-    sanitize = require('validator').sanitize
+    sanitize = require('validator').sanitize,
+    geoip    = require('geoip-lite')
     ;
 
 var app     = express();
 var mg      = new mailgun('key-88593f8y3mtme24udh-d1928q0mt8sj6');
+
 // Configuration
 
 app.configure(function() {
@@ -40,7 +42,7 @@ app.configure(function() {
 // Standard view definition.
 
 var Photo = mongoose.model("Photos", { album: String, list: mongoose.Schema.Types.Mixed });
-var Guestbook = mongoose.model("Guestbook", { name: String, email: String, comment: String, date: { type: Date, default: Date.now }, hidden: { type: Boolean, default: false } });
+var Guestbook = mongoose.model("Guestbook", { location: String, name: String, email: String, comment: String, date: { type: Date, default: Date.now }, hidden: { type: Boolean, default: false } });
 var RSVP = mongoose.model("RSVP", {  });
 
 var secure_pages = ["events.html","guestbook.html"];
@@ -114,23 +116,31 @@ app.get("/gallery/:page", function(req, res) {
 });
 
 app.get("/guestbook/list", function(req, res) { 
-	Guestbook.find({ hidden: false }).sort('-date').select('name comment date').exec(function(err, results) { 
+	Guestbook.find({ hidden: false }).sort('-date').select('name comment date location').exec(function(err, results) { 
 		res.send(results);
 	});
 });
 
 app.post("/guestbook/new", function(req, res) { 
-	comment = sanitize(req.body.comment).escape();
+	var comment = sanitize(req.body.comment).escape();
+	var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+	var geo = geoip.lookup(ip);
+	var location = "";
+
+	if(geo && req.body.location == "") {
+		location = geo.city + ", " + geo.region;
+	} else {
+		location = req.body.location;
+	}
 
 	var entry = new Guestbook({
 		name: req.body.name,
 		email: req.body.email,
-		comment: comment
+		comment: comment, 
+		location: location
 	});
 
-	entry.save(function(err) { 
-		if(err) { console.log(err); res.send(false); return; }
-
+	function save() { 
 		mg.sendText('boda@daliaydaniel.com', 
 			['Dalia y Daniel <boda@daliaydaniel.com>'], 
 			'Nueva firma en Dalia y Daniel', 
@@ -143,8 +153,21 @@ app.post("/guestbook/new", function(req, res) {
 			}
 		);
 
-		res.send('{ "name": "'+req.body.name+'", "comment": "'+comment+'" }');
+		var email = crypto.createHash('md5').update(req.body.email).digest("hex");
+	
+		res.send('{ "name": "'+req.body.name+'", ' + 
+				   '"date":"'+(new Date())+'", ' + 
+				   '"comment": "'+comment+'", ' + 
+				   '"email": "' + email + '", ' + 
+				   '"location": "'+location+'" }');
+	}
+
+	entry.save(function(err) { 
+		if(err) { console.log(err); res.send(false); return; }
+
+		save(); 
 	});
+ 
 });
 
 // Start Application

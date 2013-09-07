@@ -1,0 +1,10 @@
+.countdown {
+	text-align: right;	
+	font-family: 'Calligraffitti', cursive;
+	font-size: 25px;
+	position:absolute;
+	bottom: 10px;
+	right: 20px;
+	z-index:100;
+	color: white;
+} 

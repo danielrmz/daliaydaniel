@@ -10,7 +10,10 @@
 		"request": "*",
 		"mongoose": "*",
 		"mailgun": "*",
-		"validator": "*"
+		"validator": "*",
+		"moment": "*",
+		"piler": "*",
+		"geoip-lite":"*"
 	},
 	"engines": {
 		"node": "0.10.x",

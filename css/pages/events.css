@@ -1,0 +1,198 @@
+ 
+.events { padding: 20px; text-align: center;}
+.slogan {
+	font-size: 40px;
+	color: #CBCBCB;
+	font-family: 'Varela Round', sans-serif;
+	text-transform: uppercase;
+	margin-bottom: 30px;
+}
+
+.ribbon-header, .ribbon-footer{
+	font-family: 'Nunito', sans-serif;
+	text-transform: uppercase;
+}
+.ribbon-header {
+	margin-bottom: 10px;
+	font-size: 18px;
+	color: #727377;
+}
+.ribbon-footer {
+	color: #1ABFBD;
+	font-size: 23px;
+	margin-top: 7px;
+}
+/* ribbon style */  
+.ribbon-front {
+	color: white;
+	text-transform: uppercase;
+	font-size: 70px;
+	font-family: 'Pompiere', cursive;
+}
+
+.events .time {
+	font-family: 'Pompiere',cursive;
+	font-size: 28px;
+	text-transform: uppercase;
+	margin-top: 5px;
+	color: #ACACAE;
+}
+
+.events .time .line {
+	display: inline-block;
+	background: #1ABFBD;
+	margin-top: 15px;
+	width: 34px;
+	height: 2px;
+	position: relative;
+	top: -10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.events .invite {
+	color: #aaa;
+	font-family: 'Yellowtail', cursive;
+	font-size: 25px;
+	margin-top: 10px;
+}
+/* ribbon style */
+
+.ribbon-container .ribbon.ribbon-wrapper {
+	position: relative;
+}
+.ribbon-container .ribbon .ribbon-front {
+	background-color: #80E5E4;	height: 95px;
+	width: 364px;
+	position: relative;
+	left:-32px;
+	z-index: 2;
+}
+
+.ribbon-container .ribbon .ribbon-front,
+.ribbon-container .ribbon .ribbon-back-left,
+.ribbon-container .ribbon .ribbon-back-right
+{
+	/*-moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	-khtml-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	-webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	-o-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);*/
+}
+
+.ribbon-container .ribbon .ribbon-edge-topleft,
+.ribbon-container .ribbon .ribbon-edge-topright,
+.ribbon-container .ribbon .ribbon-edge-bottomleft,
+.ribbon-container .ribbon .ribbon-edge-bottomright {
+	position: absolute;
+	z-index: 1;
+	border-style:solid;
+	height:0px;
+	width:0px;
+}
+
+.ribbon-container .ribbon .ribbon-edge-topleft,
+.ribbon-container .ribbon .ribbon-edge-topright {
+}
+
+.ribbon-container .ribbon .ribbon-edge-bottomleft,
+.ribbon-container .ribbon .ribbon-edge-bottomright {
+	top: 95px;
+}
+
+.ribbon-container .ribbon .ribbon-edge-topleft,
+.ribbon-container .ribbon .ribbon-edge-bottomleft {
+	left: -32px;
+	border-color: transparent #1ABFBD transparent transparent;
+}
+
+.ribbon-container .ribbon .ribbon-edge-topleft {
+	top: 0px;
+	border-width: 0px 32px 0 0;
+}
+.ribbon-container .ribbon .ribbon-edge-bottomleft {
+	border-width: 0 32px 30px 0;
+}
+
+.ribbon-container .ribbon .ribbon-edge-topright,
+.ribbon-container .ribbon .ribbon-edge-bottomright {
+	left: 300px;
+	border-color: transparent transparent transparent #1ABFBD;
+}
+
+.ribbon-container .ribbon .ribbon-edge-topright {
+	top: 0px;
+	border-width: 0px 0 0 32px;
+}
+.ribbon-container .ribbon .ribbon-edge-bottomright {
+	border-width: 0 0 30px 32px;
+}
+
+.ribbon-container .ribbon .ribbon-back-left {
+	position: absolute;
+	top: 30px;
+	left: -85px;
+	width: 85px;
+	height: 95px;
+	background-color: #F8C6BD;	z-index: 0;
+}
+
+.ribbon-container .ribbon .ribbon-back-right {
+	position: absolute;
+	top: 30px;
+	right: -85px;
+	width: 85px;
+	height: 95px;
+	background-color: #F8C6BD;	
+	z-index: 0;
+}
+.ribbon-container .ribbon .ribbon-back-right {
+	border-style: solid;
+	border-color: #9FF1EF transparent;
+	border-width: 48px 24px 48px 0;
+	background: transparent !important;
+}
+.ribbon-container .ribbon .ribbon-back-left {
+	border-style: solid;
+	border-color: #9FF1EF transparent;
+	border-width: 48px 0 48px 24px;
+	background: transparent !important;
+}
+
+
+.place {
+	position: relative;
+	margin: 10px auto;
+	display: inline-block;
+}
+.place-contents {
+	display: inline-block;
+	background: #80E5E4;
+	color: white;
+	text-transform: uppercase;
+	padding: 4px;
+	float:left;
+}
+a.place-contents:hover {
+	text-decoration: none;
+	color: white;
+}
+.place-left {
+	display: inline-block;
+	width: 24px;
+	height: 23px;
+	border-style: solid;
+	border-color: #80E5E4 transparent;
+	border-width: 14px 0 14px 10px;
+	background: transparent !important;
+	float:left;
+}
+.place-right {
+	display: inline-block;
+	width: 24px;
+	height: 23px;
+	border-style: solid;
+	border-color: #80E5E4 transparent;
+	border-width: 14px 10px 14px 0px;
+	background: transparent !important;
+	float:left;
+} 

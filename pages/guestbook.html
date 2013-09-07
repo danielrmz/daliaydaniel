@@ -2,24 +2,30 @@
 
 <div class="guestbook">
 
-	<form class="form-inline" role="form">
-	  <div class="form-group">
-	    <label class="sr-only" for="mensaje">Mensaje</label>
-	    <textarea class="form-control" id="mensaje"></textarea>
-	  </div> 
-	  <div class="form-group hidden js-hidden">
-	    <label class="sr-only" for="nombre">Nombre</label>
-	    <input type="text" class="form-control" id="nombre" placeholder="Introduzca su nombre">
-	  </div>
-	  <div class="form-group hidden js-hidden">
-	    <label class="sr-only" for="correo">Correo <small style="font-size: 10px;font-weight: normal;position:relative; top:-1px;">no se har&aacute; p&uacute;blico</small></label>
-	    <input type="email" class="form-control" id="correo" placeholder="usuario@dominio.com">
-	  </div>
-	  <button type="button" class="btn btn-info hidden js-hidden js-new-guestbook">Enviar</button>
-	</form>
-
 	<ul class="entries">
-
+		<li class="form">
+			<div class='userinfo'>
+				<div class='name'><input type="text" class="form-control" id="nombre" placeholder="Introduzca su nombre"></div> 
+				<div class="date"><input type="email" class="form-control" id="correo" placeholder="usuario@dominio.com"></div>
+			</div>
+			<div class='comment'>
+				 <textarea class="form-control" id="mensaje"></textarea>
+			</div>
+			<input type="hidden" id="location" value="" />
+			<button type="button" class="btn btn-info js-new-guestbook"> > </button>
+		</li>
 	</ul>
-
+	<div id="entry" style="display:none;">
+		<li>
+			<div class='userinfo'>
+				<div class='profile'>
+					<img src="http://www.gravatar.com/avatar/{{email}}?d=http%3A%2F%2Fwww.macyenta.com%2Fimages%2Fdefault_profile.png" />
+				</div>
+				<div class='name'>{{name}}</div>
+				<div class='date'>{{date}}</div>
+				<div class='location'>{{location}}</div>
+			</div>
+			<div class='comment'>{{comment}}</div>
+		</li>
+	</div>
 </div> 
