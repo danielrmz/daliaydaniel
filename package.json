@@ -13,7 +13,8 @@
 		"validator": "*",
 		"moment": "*",
 		"piler": "*",
-		"geoip-lite":"*"
+		"geoip-lite":"*",
+		"less": "*"
 	},
 	"engines": {
 		"node": "0.10.x",

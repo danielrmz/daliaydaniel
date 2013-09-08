@@ -1,142 +1,26 @@
- 
-
-
-.gallery {
-	text-align: center;
-}
-
-.gallery .event {
-	background: url(../img/Graphic2.png) no-repeat;
-	display: inline-block; 
-	width: 230px;
-	height: 135px;
-	margin: 10px;
-	padding: 20px;
-	color: white;
-	font-size: 20px;
-	vertical-align: middle;
-	text-align: center;
-	position: relative;
-}
-
-.gallery .event.e1 { background-position: 0 0;}
-.gallery .event.e2 { background-position: -237px 0;}
-.gallery .event.e3 { background-position: -474px 0; text-transform: uppercase;}
-.gallery .event.e4 { background-position: 0 -142px; text-transform: uppercase;}
-.gallery .event.e5 { background-position: -237px -142px; text-transform: uppercase;}
-.gallery .event.e6 { background-position: -474px -142px; text-transform: uppercase;}
-.gallery .event.e7 { background-position: 0 -286px;}
-.gallery .event.e8 { background-position: -237px  -286px; font-family: 'Pompiere', cursive; text-transform: lowercase;}
-.gallery .event.e9 { background-position: -474px  -286px; font-size: 40px; font-family: 'Pompiere', cursive; text-transform: uppercase;}
-
-.somos {
-	font-family: 'Waiting for the Sunrise', cursive;
-	font-size: 75px;
-	position: absolute;
-	left: 37px;
-	top: -4px;
-}
-
-.novios {
-	font-family: 'Clicker Script', cursive;
-	font-size: 40px;
-	position: absolute;
-	right: 30px;
-	bottom: 5px;
-}
-
-.estamos {
-	font-family: 'Clicker Script', cursive;
-	font-size: 44px;
-	text-transform: lowercase;
-	position: absolute;
-	top: 18px;
-	left: 62px;
-}
-
-.comprometidos {
-	font-family: 'Cabin', sans-serif;
-	text-transform: uppercase; 
-	position: absolute;
-	top: 65px;
-	left: 34px;
-}
-
-.pedida {
-	font-family: 'Pompiere', cursive;
-	font-size: 30px;
-	margin-top: 10px;
-	display: block;
-}
-
-.presentacion {
-	font-family: 'Advent Pro', sans-serif;
-	font-size: 24px;
-	display: block;
-	margin-top: 30px;
-}
-
-.civil { 
-	font-family: 'Finger Paint', cursive;
-	font-size: 45px;
-	display: block;
-	margin-top: 17px;
-}
-
-.hasta {
-	font-family: 'Waiting for the Sunrise', cursive;
-	font-size: 30px;
-	line-height: 1;
-	margin-top: 5px;
-}
-
-.tuyyo {
-	font-family: 'Give You Glory', cursive;
-	font-size: 27px;
-	margin-top: 15px;
-}
-
-.honeymoon {
-	font-family: 'Shadows Into Light Two', cursive;
-	font-size: 42px;
-	font-weight: 300;
-	margin-top: 15px;
-}
-.photos {
-	font-family: 'Pompiere', cursive;
-	margin-top: 12px;
-	font-size: 50px;
-}
-
-.gallery a {
-	text-decoration: none;
-	cursor: pointer;
-}
-
-.gallery .disabled {
-	opacity: 0.3;
-	cursor: default;
-}
-.thumbs .empty {
-	text-align: center;
-	font-size: 20px;
-	font-weight: 300;
-}
-.image {text-align: center; margin-bottom: 10px; }
-.image img {
-	max-width: 539px;
-}
-.thumbs span {
-	background: black;
-	float: left;
-	min-width: 75px;
-	min-height: 75px;
-	max-width: 76.85px;
-	max-height:75px;
-	display: block;
-	overflow: hidden;
-	cursor: pointer;
-}
-.thumbs img {
-	max-width: 100px;
-}
+.gallery{text-align:center}.gallery .event{background:url(../../img/Graphic2.png) no-repeat;display:inline-block;width:230px;height:135px;margin:10px;padding:20px;color:#fff;font-size:20px;vertical-align:middle;text-align:center;position:relative}.gallery .event.e1{background-position:0 0}
+.gallery .event.e2{background-position:-237px 0}
+.gallery .event.e3{background-position:-474px 0;text-transform:uppercase}
+.gallery .event.e4{background-position:0 -142px;text-transform:uppercase}
+.gallery .event.e5{background-position:-237px -142px;text-transform:uppercase}
+.gallery .event.e6{background-position:-474px -142px;text-transform:uppercase}
+.gallery .event.e7{background-position:0 -286px}
+.gallery .event.e8{background-position:-237px -286px;font-family:'Pompiere',cursive;text-transform:lowercase}
+.gallery .event.e9{background-position:-474px -286px;font-size:40px;font-family:'Pompiere',cursive;text-transform:uppercase}
+.gallery .somos{font-family:'Waiting for the Sunrise',cursive;font-size:75px;position:absolute;left:37px;top:-4px}
+.gallery .novios{font-family:'Clicker Script',cursive;font-size:40px;position:absolute;right:30px;bottom:5px}
+.gallery .estamos{font-family:'Clicker Script',cursive;font-size:44px;text-transform:lowercase;position:absolute;top:18px;left:62px}
+.gallery .comprometidos{font-family:'Cabin',sans-serif;text-transform:uppercase;position:absolute;top:65px;left:34px}
+.gallery .pedida{font-family:'Pompiere',cursive;font-size:30px;margin-top:10px;display:block}
+.gallery .presentacion{font-family:'Advent Pro',sans-serif;font-size:24px;display:block;margin-top:30px}
+.gallery .civil{font-family:'Finger Paint',cursive;font-size:45px;display:block;margin-top:17px}
+.gallery .hasta{font-family:'Waiting for the Sunrise',cursive;font-size:30px;line-height:1;margin-top:5px}
+.gallery .tuyyo{font-family:'Give You Glory',cursive;font-size:27px;margin-top:15px}
+.gallery .honeymoon{font-family:'Shadows Into Light Two',cursive;font-size:42px;font-weight:300;margin-top:15px}
+.gallery .photos{font-family:'Pompiere',cursive;margin-top:12px;font-size:50px}
+.gallery a{text-decoration:none;cursor:pointer}
+.gallery .disabled{opacity:.3;cursor:default}
+.thumbs .empty{text-align:center;font-size:20px;font-weight:300}
+.thumbs span{background:#000;float:left;min-width:75px;min-height:75px;max-width:76.85px;max-height:75px;display:block;overflow:hidden;cursor:pointer}
+.thumbs img{max-width:100px}
+.image{text-align:center;margin-bottom:10px}.image img{max-width:539px}

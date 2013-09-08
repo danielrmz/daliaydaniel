@@ -1,0 +1,132 @@
+ 
+.entries {
+	list-style: none;
+	margin: 10px 0;
+	padding: 0;
+
+	position: relative;
+	z-index: 1; /* prevent shadows falling behind containers with backgrounds */
+	overflow: hidden;
+	list-style: none;
+	margin: 0; 
+
+	li {
+		float: left;
+		width: 305px;
+		height: 177px; 
+		padding: 5px;
+		margin-right: 10px;
+		margin-top: 10px;
+		border: 1px solid #F0F0F0;
+		border-radius: 4px;
+
+	}
+
+	input {
+		border-top: 0;
+		border-left: 0;
+		border-right: 0;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+		border-bottom: 1px solid silver;
+		border-radius: 0;
+	}
+
+	input:focus {
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		border-bottom: 1px solid #1ABFBD;
+	}
+
+	textarea {
+		resize: none;
+		border-radius: 0;
+	}
+
+	textarea:focus {
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		border:1px solid #1ABFBD;
+	}
+
+	.name {
+		font-weight: bold;
+		color: #1ABFBD;
+		font-size: 16px;
+	}
+
+	.date, .location {
+		font-size:12px; 
+	}
+	.userinfo {
+		margin-bottom: 10px;
+	}
+	li:hover {
+		border:1px solid #1ABFBD;
+	}
+	li.form {
+		border:1px solid #efefef;
+	}
+
+	li {
+		position: relative;
+		float: left; 
+		height: 180px;
+		padding: 10px;
+		border: 1px solid #efefef;
+		margin: 0 15px 30px 0;
+		background: #fff; 
+	}
+
+	li:before,  li:after { 
+		content: '';
+		z-index: -1;
+		position: absolute;
+		left: 10px;
+		bottom: 10px;
+		width: 50%;
+		max-width: 300px; /* avoid rotation causing ugly appearance at large container widths */
+		max-height: 100px;
+		height: 55%;
+		-webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+		-moz-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+		-webkit-transform: skew(-15deg) rotate(-6deg);
+		-moz-transform: skew(-15deg) rotate(-6deg);
+		-ms-transform: skew(-15deg) rotate(-6deg);
+		-o-transform: skew(-15deg) rotate(-6deg);
+		transform: skew(-15deg) rotate(-6deg); 
+	}
+
+	li:after {
+		left: auto;
+		right: 10px;
+		-webkit-transform: skew(15deg) rotate(6deg);
+		-moz-transform: skew(15deg) rotate(6deg);
+		-ms-transform: skew(15deg) rotate(6deg);
+		-o-transform: skew(15deg) rotate(6deg);
+		transform: skew(15deg) rotate(6deg); 
+	}
+
+	.btn {
+		height: 25px;
+		padding-top: 0;
+		padding-bottom: 0;
+		background: #80E5E4;
+		border: 0;
+		border-radius: 0;
+		margin-top: 5px;
+		float: right;
+	}
+
+} 
+
+.profile {
+	float: left;
+
+	img {
+		width: 65px;
+		opacity: 0.5;
+		margin-right: 10px;
+	} 
+}
