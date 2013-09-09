@@ -119,11 +119,11 @@ function InitializeGallery() {
 		currentAlbum = id;
 		$(".image").html(" ");
 		$(".thumbs").html(" ");
-		var contents = $("<div></div>");
+		var contents = $("<ul></ul>");
 		var pics = galleries[id] || [];
  
  		for(var i = 0; i < pics.length; i++) {
-			contents.append("<span><img data-id='" + i + "' class='js-pic-"+i+"' src='" + pics[i] + "' /></span>");
+			contents.append("<li><span><img data-id='" + i + "' class='js-pic-"+i+"' src='" + pics[i] + "' /></span></li>");
 		}
 
 		if(pics.length == 0) {
