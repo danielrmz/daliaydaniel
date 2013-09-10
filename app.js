@@ -45,7 +45,7 @@ var Photo = mongoose.model("Photos", { album: String, list: mongoose.Schema.Type
 var Guestbook = mongoose.model("Guestbook", { location: String, name: String, email: String, comment: String, date: { type: Date, default: Date.now }, hidden: { type: Boolean, default: false } });
 var RSVP = mongoose.model("RSVP", {  });
 
-var secure_pages = ["events.html","guestbook.html"];
+var secure_pages = ["events.html"];
 var allowed_pwds = ["3a79c4535726547aa453d83dcc6435b0", "6d071901727aec1ba6d8e2497ef5b709", "cee8d6b7ce52554fd70354e37bbf44a2"];
 var galleries = { "dates": "10151741057697935", "engaged": "10151741062062935" };
 var access_token = "";
