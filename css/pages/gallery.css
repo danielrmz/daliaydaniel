@@ -20,9 +20,17 @@
 .gallery .photos{font-family:'Pompiere',cursive;margin-top:12px;font-size:50px}
 .gallery a{text-decoration:none;cursor:pointer}
 .gallery .disabled{opacity:.3;cursor:default}
-.thumbs li{display:inline-block}
-.thumbs ul{position:absolute;display:none;list-style:none;margin:0;padding:0;left:0;width:1024px;border:1px solid #f00}
+.thumbs{width:100%;height:103px;overflow:hidden}.thumbs li{float:left}
+.thumbs ul{list-style:none;margin:0;padding:0;left:0;width:1024px}
 .thumbs .empty{text-align:center;font-size:20px;font-weight:300}
 .thumbs span{background:#000;float:left;min-width:75px;min-height:75px;max-width:76.85px;max-height:75px;display:block;overflow:hidden;cursor:pointer}
-.thumbs img{max-width:100px}
-.image{text-align:center;margin-bottom:10px}.image img{max-width:539px}
+.thumbs img{max-height:90px}
+.gallery-modal .modal-body{padding:0}
+.gallery-modal .modal-dialog{max-width:700px;padding-top:45px}
+.gallery-modal .modal-footer{margin-top:0;padding:0;margin:0}
+.gallery-modal .modal-header{background:transparent;position:absolute;z-index:9999;width:300px;top:-56px;color:#fff;border-bottom:0}.gallery-modal .modal-header button{display:none}
+.gallery-modal .modal-title{font-family:'Waiting for the Sunrise',cursive;font-size:30px;font-weight:bold}
+@media all and (min-width:575px){.gallery-modal .modal-dialog{width:inherit}}@media all and (max-width:575px){.gallery-modal .modal-dialog{width:auto !important}}.gallery-modal .image{text-align:center}.gallery-modal .image img{max-width:100%}
+.gallery-modal .jThumbnailScroller .jTscroller a{border:0;margin-right:0}
+.gallery-modal .jThumbnailScroller{border:0;background:transparent;width:100%}
+.gallery-modal .jThumbnailScroller#tS2{margin-top:0;margin-left:0;margin-right:0}

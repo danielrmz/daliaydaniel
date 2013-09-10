@@ -35,7 +35,7 @@ app.configure(function() {
  	app.set('view engine', 'ejs');
  	app.set('layout', 'index.html');
 
- 	mongoose.connect(process.env.MONGOHQ_URL);
+	mongoose.connect(process.env.MONGOHQ_URL);
 });
 
 
@@ -52,7 +52,15 @@ var access_token = "";
 var gallery_src = "https://graph.facebook.com/{0}/photos?fields=images&limit=50&method=GET&format=json&suppress_http_code=1&access_token="+access_token;
 	
 app.get('/', function(req, res) {
-	res.render("home.html");
+	res.render("home.html", { callback: "", error: "", stdp: "", gallery: "" });
+});
+
+app.get("/gallery-:page", function(req, res) { 
+	res.render("gallery.html", { callback: "", error: "", stdp: "", gallery: sanitize(sanitize(req.params.page).xss()).escape() });	
+});
+
+app.get("/savethedate-:number", function(req, res) { 
+	res.render("home.html", { callback: "", error: "", stdp: sanitize(sanitize(req.params.number).xss()).escape(), gallery: "" });
 });
 
 app.get('/:page', function(req, res) { 
@@ -60,15 +68,15 @@ app.get('/:page', function(req, res) {
 	page = page.replace(".html","") + ".html"; 
 
 	if(!req.session.auth && secure_pages.indexOf(page) >= 0) {
-		res.render("login.html", { callback: page, error: "" });
+		res.render("login.html", { callback: page, error: "", stdp: "", gallery: "" });
 		return;
 	}
 
-	res.renderPjax(page,{ callback: "", error: "" }); 
+	res.renderPjax(page,{ callback: "", error: "", stdp: "", gallery: "" }); 
 }); 
 
 app.get("/login", function(req, res) {
-	res.render("login.html", { callback: "", error: "" });	
+	res.render("login.html", { callback: "", error: "", stdp: "", gallery: "" });	
 });
 
 app.post("/login", function(req, res) {
@@ -86,10 +94,10 @@ app.post("/login", function(req, res) {
 		error = "Error, intente de nuevo."
 	}
 
-	res.render("login.html", { callback: "", error: error } );	
+	res.render("login.html", { callback: "", error: error, stdp: "", gallery: "" } );	
 });
 
-app.get("/gallery/:page", function(req, res) { 
+app.get("/pictures/:page", function(req, res) { 
 	var album_id = galleries[req.params.page] || "";
 
 	if(!album_id) { res.send(null); return; }
@@ -102,23 +110,25 @@ app.get("/gallery/:page", function(req, res) {
 					return false; 
 				}
 				var a = new Photo({ album: req.params.page, list: bodyy });
-				a.save(function(err) { if(err) { console.log(err); } });
+				a.save(function(err) { if(err) { console.log(err); } }); 
 
 				res.send(bodyy);
 			});
 		} else {
-			 
 			res.send(album.list);
 		}
-	});
-	
-	
+	}); 
 });
 
+
+
 app.get("/guestbook/list", function(req, res) { 
+
 	Guestbook.find({ hidden: false }).sort('-date').select('name comment date location').exec(function(err, results) { 
 		res.send(results);
 	});
+
+	
 });
 
 app.post("/guestbook/new", function(req, res) { 
@@ -167,7 +177,8 @@ app.post("/guestbook/new", function(req, res) {
 
 		save(); 
 	});
- 
+ 	
+
 });
 
 // Start Application

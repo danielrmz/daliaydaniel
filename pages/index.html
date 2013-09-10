@@ -13,6 +13,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     
+    <link rel="stylesheet" href="js/vendor/scroller/jquery.thumbnailScroller.css">
     <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components/countdown.css">
@@ -85,18 +86,26 @@
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> 
         </div>
         <div class="modal-body">
-            <div id="carousel"  class="carousel fade">
+            <div id="savethedate"  class="carousel fade">
+                <ol class="carousel-indicators">
+                    <li data-target="#savethedate" data-slide-to="0" <%- (stdp == '1' || stdp == '' ) ? 'class="active"':'' %> ></li>
+                    <li data-target="#savethedate" data-slide-to="1" <%- stdp == '2' ? 'class="active"':'' %>></li>
+                    <li data-target="#savethedate" data-slide-to="2" <%- stdp == '3' ? 'class="active"':'' %>></li>
+                    <li data-target="#savethedate" data-slide-to="3" <%- stdp == '4' ? 'class="active"':'' %>></li>
+                    <li data-target="#savethedate" data-slide-to="4" <%- stdp == '5' ? 'class="active"':'' %>></li>
+                    <li data-target="#savethedate" data-slide-to="5" <%- stdp == '6' ? 'class="active"':'' %>></li>
+                </ol>
+
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
-                    <div class="item active bg1"></div>
-                    <div class="item bg2"></div>
-                    <div class="item bg3"></div>
-                    <div class="item bg4"></div>
-                    <div class="item bg5"></div>
-                    <div class="item bg6"></div>
+                    <div class="item <%- (stdp == '1' || stdp == '') ? 'active':'' %> bg1"><div class="fb-like" data-href="http://www.daliaydaniel.com/savethedate-1" data-width="450" data-layout="button_count" data-show-faces="true" data-send="true"></div></div>
+                    <div class="item <%- stdp == '2' ? 'active':'' %> bg2"><div class="fb-like" data-href="http://www.daliaydaniel.com/savethedate-2" data-width="450" data-layout="button_count" data-show-faces="true" data-send="true"></div></div>
+                    <div class="item <%- stdp == '3' ? 'active':'' %> bg3"><div class="fb-like" data-href="http://www.daliaydaniel.com/savethedate-3" data-width="450" data-layout="button_count" data-show-faces="true" data-send="true"></div></div>
+                    <div class="item <%- stdp == '4' ? 'active':'' %> bg4"><div class="fb-like" data-href="http://www.daliaydaniel.com/savethedate-4" data-width="450" data-layout="button_count" data-show-faces="true" data-send="true"></div></div>
+                    <div class="item <%- stdp == '5' ? 'active':'' %> bg5"><div class="fb-like" data-href="http://www.daliaydaniel.com/savethedate-5" data-width="450" data-layout="button_count" data-show-faces="true" data-send="true"></div></div>
+                    <div class="item <%- stdp == '6' ? 'active':'' %> bg6"><div class="fb-like" data-href="http://www.daliaydaniel.com/savethedate-6" data-width="450" data-layout="button_count" data-show-faces="true" data-send="true"></div></div>
                 </div>
             </div>
-            <div class="fb-like" data-href="http://www.daliaydaniel.com" data-width="450" data-layout="button_count" data-show-faces="true" data-send="true"></div>
             <div class="clearfix"></div>
         </div>
     </div><!-- /.modal-content -->
@@ -123,16 +132,18 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script src="js/vendor/jquery.ui.touch-punch.min.js"></script>
 <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+
+<script src="js/vendor/scroller/jquery.thumbnailScroller.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/vendor/jquery.pjax.js"></script> 
-<script src="node_modules/moment/moment.js"></script>
+<script src="js/vendor/moment.min.js"></script>
 <script src="js/vendor/moment-es.js"></script>
-<script src="js/main.js"></script>
-<script type="text/javascript"> 
-
-</script> 
+<script src="js/core.js"></script>
+<script src="js/guestbook.js"></script>
+<script type="text/javascript"><% if(stdp != '') { %> $(function() { $(".love").click(); }); <% } %></script>
+<script type="text/javascript"><% if(gallery != '') { %> $(function() { window.pcback = { "<%-gallery%>": function() { $(".gallery a[href*=gallery-<%-gallery%>]").click(); }}  }); <% } %></script>
 </body>
 </html>
