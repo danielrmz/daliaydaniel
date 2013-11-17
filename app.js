@@ -35,7 +35,7 @@ app.configure(function() {
  	app.set('view engine', 'ejs');
  	app.set('layout', 'index.html');
 
-	mongoose.connect(process.env.MONGOHQ_URL);
+	mongoose.connect(process.env.MONGOHQ_URL || "mongodb://heroku:Dff-kKfruElHWjRfhUvn76oWJhuqTQegsXOd4gBTdYamKefACAgYkq8X_REP7rSUYelyGw8-VY6YAf6d8HLb9Q@paulo.mongohq.com:10003/app16659754");
 });
 
 
@@ -48,7 +48,7 @@ var RSVP = mongoose.model("RSVP", {  });
 var secure_pages = ["events.html"];
 var allowed_pwds = ["3a79c4535726547aa453d83dcc6435b0", "6d071901727aec1ba6d8e2497ef5b709", "cee8d6b7ce52554fd70354e37bbf44a2"];
 var galleries = { "dates": "10151741057697935", "engaged": "10151741062062935", "pedida": "10151902243972935", "encuentro": "10151902233727935" };
-var access_token = "CAACEdEose0cBAHHb8VZCtHQ3wvyTTotqdc4mLvYlCuR4ZCCx2JG2Ig1QArdTeKHN6YkAO5ex6oozEo5BFulEt8AnmB7X4KTq9jpD6Tfwtxvb99EggcA4gX4kMjkDCW4d0POfZA5mYlDUwHXsZArVru3yhbBoKqbxgpuBUJZBYeDBZCQfwUARwJJZC7ZC9olqUn0YJICzslYd7t28J5piCPGh12yOVmpzGaRU6f8QHyadgwZDZD";
+var access_token = "";
 var gallery_src = "https://graph.facebook.com/{0}/photos?fields=images&limit=50&method=GET&format=json&suppress_http_code=1&access_token="+access_token;
 	
 app.get('/', function(req, res) {
@@ -106,7 +106,15 @@ app.get("/pictures/:page", function(req, res) {
 		if(!album) {
 			var url = gallery_src.replace("{0}",album_id);
 			request.get(url, function(e, r, bodyy) { 
+				if(bodyy) {
+					var datar = JSON.parse(bodyy);
+					if(!datar || !datar.data || datar.data.length == 0) {
+						res.send(null); 
+						return false;
+					}
+				} 
 				if(!bodyy || bodyy.error) { 
+					res.send(null);
 					return false; 
 				}
 				var a = new Photo({ album: req.params.page, list: bodyy });

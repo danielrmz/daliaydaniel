@@ -22,6 +22,8 @@ function InitializeGallery() {
 	var galleries = {};
 		galleries["dates"] = [];
 		galleries["engaged"] = [];
+		galleries["pedida"] = [];
+		galleries["encuentro"] = [];
 
 	for(var g in galleries) {
 		if(galleries.hasOwnProperty(g)) {
