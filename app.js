@@ -47,7 +47,13 @@ var RSVP = mongoose.model("RSVP", {  });
 
 var secure_pages = ["events.html"];
 var allowed_pwds = ["3a79c4535726547aa453d83dcc6435b0", "6d071901727aec1ba6d8e2497ef5b709", "cee8d6b7ce52554fd70354e37bbf44a2"];
-var galleries = { "dates": "10151741057697935", "engaged": "10151741062062935", "pedida": "10151902243972935", "encuentro": "10151902233727935" };
+var galleries = { 
+	"dates": "10151741057697935", 
+	"engaged": "10151741062062935", 
+	"pedida": "10151902243972935", 
+	"encuentro": "10151902233727935",
+	"presentacion": "10152066757647935" 
+};
 var access_token = "";
 var gallery_src = "https://graph.facebook.com/{0}/photos?fields=images&limit=50&method=GET&format=json&suppress_http_code=1&access_token="+access_token;
 	

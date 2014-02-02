@@ -24,6 +24,7 @@ function InitializeGallery() {
 		galleries["engaged"] = [];
 		galleries["pedida"] = [];
 		galleries["encuentro"] = [];
+		galleries["presentacion"] = [];
 
 	for(var g in galleries) {
 		if(galleries.hasOwnProperty(g)) {
