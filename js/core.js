@@ -5,6 +5,7 @@ $(function() {
 	DisplaySecretPanels();
 	InitializeViews();
 	InitializeGallery();
+	InitializeRsvp();
 
 	$(".love").click(function() { 
 		$(".save").show().modal();
@@ -25,6 +26,7 @@ function InitializeGallery() {
 		galleries["pedida"] = [];
 		galleries["encuentro"] = [];
 		galleries["presentacion"] = [];
+		galleries["civil"] = [];
 
 	for(var g in galleries) {
 		if(galleries.hasOwnProperty(g)) {
@@ -250,6 +252,29 @@ function CalculateCountdown() {
 
 	$countdown.text(Math.ceil(parseFloat(daysLeft)));
 	$countdown.attr("title", (parseInt(daysLeft) / 30) + " meses");
+}
+
+/** 
+ * Initializes rsvp window
+*/
+function InitializeRsvp() {
+	$(".rsvp").click(function() { 
+		$(".modal-rsvp").modal();
+		$(".modal-rsvp a").click(function() { 
+			var yesno = $(this).data("yesno");
+			var $step2 = $(".answer-si");
+			$(".step1").fadeOut(function() { 
+				$step2.fadeIn();
+				
+				if(yesno == "si") {
+
+				} 
+				if(yesno == "no") {
+
+				}
+			});
+		});
+	});
 }
 
 /**

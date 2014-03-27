@@ -79,6 +79,43 @@
         <div class="footer"></div>
     </div>
 
+    <div class="modal fade modal-rsvp">
+      <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                &nbsp;
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> 
+            </div>
+            <div class="modal-body">
+                <div class="row step1">
+                    <div class="col-6" align="center">
+                        <a href="#si"><img src="img/si.png" data-yesno="si" title="Si Asistire" /></a>
+                    </div>
+                    <div class="col-6" align="center">
+                        <a href="#no"><img src="img/no.png" data-yesno="no" title="No Asistire" /></a>
+                    </div>
+                </div>
+
+                <div class="row step2 answer-si" style="display:none;">
+                    <div class="col-12" align="center">
+                        <label class="control-label col-sm-3">Con grata alegr&iacute;a, yo </label>
+                        <label class="control-label col-sm-3"><input id="name"  class="form-control input-sm" type="text" /> y </label>
+                        <label class="control-label col-sm-3"><input id="amount"  class="form-control input-sm"  type="text" /> </label>
+                        <label class="control-label col-sm-3">invitados atenderemos</label>
+                    </div>   
+                </div>
+
+                <div class="row step2 answer-no" style="display:none;">
+                    <div class="col-12" align="center">
+                        Con pena, yo <input id="name" type="text" class="form-control input-sm" /> No podr&eacute; asistir a la boda. 
+                    </div>   
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </div> 
+
     <div class="modal fade save modal-wide">
       <div class="modal-dialog">
         <div class="modal-content">
