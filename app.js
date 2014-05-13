@@ -62,14 +62,6 @@ app.get('/', function(req, res) {
 	res.render("home.html", { callback: "", error: "", stdp: "", gallery: "" });
 });
 
-app.post('/rsvp', function(req, res) { 
-	var name = req.body.name;
-	var guestno = req.body.guest_amount;
-	var yesno = req.body.yesno;
-
-
-});
-
 app.get("/gallery-:page", function(req, res) { 
 	res.render("gallery.html", { callback: "", error: "", stdp: "", gallery: sanitize(sanitize(req.params.page).xss()).escape() });	
 });
@@ -86,8 +78,19 @@ app.get('/:page', function(req, res) {
 		res.render("login.html", { callback: page, error: "", stdp: "", gallery: "" });
 		return;
 	}
-	console.log(req.query);
-	res.renderPjax(page,{ callback: "", error: "", stdp: "", gallery: "", data: req.query }); 
+
+	res.renderPjax(page,{ 
+		callback: "", 
+		error: "", 
+		stdp: "", 
+		gallery: "", 
+		data: {
+			nombre: req.query.nombre,
+			apellido: req.query.apellido,
+			correo: req.query.correo,
+			invitados: req.query.invitados
+		}
+	}); 
 }); 
 
 app.get("/login", function(req, res) {
@@ -219,19 +222,23 @@ app.get("/rsvp", function(req, res) {
 	});	
 });
 
-app.post("/rsvp", function(req, res) {
+app.post("/rsvp/save", function(req, res) {
 	var nombre = req.body.nombre;
 	var apellido = req.body.apellido;
 	var correo = req.body.correo;
-	var invitados = req.body.invitados;
+	var invitados = req.body.noinvitados;
 	var rsvp = req.body.rsvp;
 
 	console.log(req.body);
 	console.log("Sending...");
-	mg.sendText('daniel.rmz@gmail.com', 
+	mg.sendText('rsvp@daliaydaniel.com', 
 			['Dalia y Daniel <boda@daliaydaniel.com>'], 
-			'RSVP Dalia y Daniel - ' + nombre + " " + apellido, 
-			"Un invitado acaba de usar el RSVP.\n\nNombre: " + nombre + " " + apellido + "\n\nCorreo: " + correo + "\n\n# Invitados" + invitados + "\n\n RSVP: " + rsvp,
+			'RSVP Dalia y Daniel - ' + nombre + " " + apellido + " - " + rsvp, 
+			"Un invitado acaba de usar el RSVP."+
+				"\n\nNombre: " + nombre + " " + apellido + 
+				"\n\nCorreo: " + correo + 
+				"\n\n# Invitados: " + invitados + 
+				"\n\nRSVP: " + rsvp,
 			'no-reply@daliaydaniel.com', 
 			{},
 			function(err) {
@@ -239,7 +246,7 @@ app.post("/rsvp", function(req, res) {
     			else     console.log('Success sending the email.');
 			}
 	);
-	console.log("complete");
+	console.log("...complete");
 	res.send(true);
 });
 

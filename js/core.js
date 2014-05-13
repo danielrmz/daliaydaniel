@@ -27,7 +27,11 @@ function ResetRSVP() {
 	$(".rsvp-answer").removeClass("active");
 	$(".filter-si,.filter-no").hide();
 	$(".rsvp").show();
-	$(".form-rsvp input[type!=submit]").val("");
+
+	if(Arg("correo") == "") {
+		$(".form-rsvp input[type!=submit]").val("");
+	}
+
 	$(".btn-rsvp").removeClass("active");
 
 	$(".btn-rsvp").click(function() {  
@@ -66,7 +70,7 @@ function ResetRSVP() {
 
 		var data = { rsvp: rsvp, nombre: n, apellido: a, correo: c, noinvitados: i };
  
- 		$.post("/rsvp", data).done(function(payload) { 
+ 		$.post("/rsvp/save", data, "json").done(function(payload) { 
 
 			$(".rsvp-answer").addClass("active");
 			$(".rsvp-"+ rsvp).show();
