@@ -208,3 +208,119 @@ body {
 	border-radius: 0;
 }
 
+.icon-bar {
+	background: white;
+}
+.navbar-brand {
+	color: #13BFBC;
+	font-family: 'Shadows Into Light Two',cursive;
+	font-size: 31px;
+}
+.navbar-brand:hover {
+	color: #9FF1EF;
+}
+.navbar-brand span {
+	color: #D7F3F4;
+	margin-left: 3px;
+	margin-right: 3px;
+}
+.navbar-toggle { 
+	background: #13BFBC;
+	border-radius: 0;
+	margin: 0;
+	padding: 17px 13px;
+}
+.navbar-collapse {
+	background: #13BFBC;
+}
+.navbar-collapse li a {
+	color: white;
+}
+.navbar-collapse li a:hover {
+	background: white;
+	color: #13BFBC;
+}
+
+.header-days-left {
+	color: #13BFBC;
+	font-weight: bold;
+}
+.rightext {
+	margin-right: 10px;
+}
+
+h2 {
+	font-family: 'Shadows Into Light Two',cursive;
+	color: #75715d;
+}
+
+.btn-primary, .btn-primary:focus {
+	background-color: #13BFBC;
+	border:1px solid #13BFBC;
+}
+.btn-primary:hover {
+	background: #9FF1EF;
+	border:1px solid #9FF1EF; 
+}
+
+.passwd {
+	border-radius: 0;
+	-webkit-transition: none;
+	transition: none;
+}
+.passwd:focus { 
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 3px #13BFBC;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 3px #13BFBC;
+	border:1px solid #13BFBC;
+}
+
+h3 {
+	font-family: 'Shadows Into Light Two',cursive;
+	color: #75715d;
+	font-size: 19px;
+}
+
+.main-container {
+	background: transparent;
+}
+
+.rsvp h3.title {
+	color: #13BFBC;
+	font-size: 30px;
+} 
+
+.rsvp h4 {
+	font-size: 14px;
+	color: #13BFBC;
+	opacity: 0.5;
+}
+
+.rsvp h4 .date {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.rsvp .btn-rsvp {
+	opacity: 0.3;
+}
+.rsvp .btn-rsvp:hover, .rsvp .btn-rsvp:focus, .rsvp .btn-rsvp.active {
+	opacity: 1;
+}
+.rsvp input[type=text], .rsvp input[type=email], .rsvp input[type=number] {
+	border-radius: 0;
+	-webkit-transition: none;
+	transition: none;
+}
+.rsvp input[type=text]:focus,.rsvp input[type=email]:focus,.rsvp input[type=number]:focus {
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 3px #13BFBC;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 3px #13BFBC;
+	border:1px solid #13BFBC;
+}
+
+body {
+	/*background: url(../img/dot.png) 0% 0% repeat local transparent;*/
+}
+
+.rsvp-answer {
+	margin-top: 50px;
+}

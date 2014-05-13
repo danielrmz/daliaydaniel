@@ -41,9 +41,18 @@ $(function() {
                 $(".entries").append(getGBEntryTemplate(entry));
             }
         });
+
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
+        }
     }
 
-    function getGBEntryTemplate(entry) {
+    
+
+});
+
+function getGBEntryTemplate(entry) {
         var $temp = $("#entry").html();
         moment.lang('es');
 
@@ -55,15 +64,29 @@ $(function() {
                     .replace("{{email}}", entry.email)
                     .replace(/\n/gi, '' )
                     .trim();
-    }
+}
 
+$(document).on('pjax:send', function(pjax) {
+    var $target = $(arguments[2].target);
+    var location = $target.attr("href"); 
+    if((location + "").indexOf("guestbook") >= 0) {
+        $.getJSON("/guestbook/list", function(data) { 
+            for(var i = 0; i < data.length; i++) {
+                var entry = data[i];
+
+                $(".entries").append(getGBEntryTemplate(entry));
+            }
+        });
+
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
+        }
+    }
 });
 
-   var geocoder;
+var geocoder;
 
-   if (navigator.geolocation) {
-   	navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
-   } 
 //Get the latitude and the longitude;
 function successFunction(position) {
 	var lat = position.coords.latitude;

@@ -1,0 +1,64 @@
+<div class="rsvp">
+	
+	
+	<h3 class="title">Hola!</h3>
+	<h3>Nos gustar&iacute;a saber si podr&aacute;s acompa&ntilde;arnos en nuestra boda.</h3>
+	<br />
+	<div class="row">
+		<div class="col-xs-6" align="center">
+			<a href="javascript:;"><img class="btn-rsvp" src="img/si.png" data-yesno="si" title="Si Asistir&eacute;" /></a>
+			<br /><br />
+		</div>
+		<div class="col-xs-6" align="center">
+			<a href="javascript:;"><img class="btn-rsvp" src="img/no.png" data-yesno="no" title="No Asistir&eacute;" /></a>
+		</div>
+	</div>
+	<form class="form-horizontal form-rsvp" style="display:none;" role="form" method="post" action="/rsvp">
+	
+		<div class="form-group">
+		<label for="inputEmail3" class="col-xs-2 control-label">Nombre</label>
+			<div class="col-xs-9">
+				<input type="text" class="form-control" value="<%=data.nombre%>"  required="true" id="txtNombre">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputPassword3" class="col-xs-2 control-label">Apellido</label>
+			<div class="col-xs-9">
+				<input type="text" class="form-control"  value="<%=data.apellido %>" required="true" id="txtApellido">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputPassword3" class="col-xs-2 control-label">Correo</label>
+			<div class="col-xs-9">
+				<input type="email" class="form-control" value="<%=data.correo%>" required="true" id="txtCorreo">
+			</div>
+		</div>
+		<div class="form-group filter-si" style="display:none;">
+			<label for="inputPassword3" class="col-xs-2 control-label">#</label>
+			<div class="col-xs-6">
+				<input type="number" class="form-control" required="true" value="<%=data.invitados%>" id="txtInvitados" placeholder="# de invitados" min="1">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-xs-11">
+				<input type="submit" class="btn btn-primary pull-right" value="Enviar" />
+				<input type="hidden" value="" id="rsvp" name="rsvp">
+			</div>
+		</div>
+	</form>
+
+	<h4>Fecha l&iacute;mite para confirmar: <span class="date">Junio 15, 2014</span></h4>
+</div>
+<div class="rsvp-answer">
+	<div class="rsvp-si" style="display:none;">
+		<h3 class="title">Gracias por confirmar!</h3>
+		<h3>Nos da gusto contar con su presencia el 5 de Julio</h3>
+		<h3>En un par de minutos recibir&aacute;s un correo con informaci&oacute;n adicional acerca de ese d&iacute;a. </h3>
+		<h3>Cualquier duda, no dudes en marcarnos o escribirnos a <a href="mailto:boda@daliaydaniel.com">boda@daliaydaniel.com</a></h3>  
+	</div>
+	<div class="rsvp-no" style="display:none;">
+		<h3 class="title">Oh oh!</h3>
+		<h3>Lamentamos escuchar eso, pero no te preocupes. Muchas gracias por hacernoslo saber!</h3>
+		<h3>Cualquier duda, no dudes en marcarnos o escribirnos a <a href="mailto:boda@daliaydaniel.com">boda@daliaydaniel.com</a></h3>  
+	</div>
+</div>

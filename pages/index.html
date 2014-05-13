@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Dalia y Daniel</title>
     <meta name="description" content="Dalia Magallanes y Daniel Ramirez">
-    <!-- <meta name="viewport" content="width=device-width"> -->
+    <meta name="viewport" content="width=device-width">
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="js/vendor/scroller/jquery.thumbnailScroller.css">
     <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/components/countdown.css">
     <link rel="stylesheet" href="css/components/save.css">
     <link rel="stylesheet" href="css/pages/contact.css">
@@ -26,8 +27,34 @@
     <link href='http://fonts.googleapis.com/css?family=Yellowtail|Oxygen:400,300,700|Calligraffitti|Nunito:400,300,700|Varela+Round|Pompiere|Cabin:400,400italic|Waiting+for+the+Sunrise|Clicker+Script|Loved+by+the+King|Squada+One|Shadows+Into+Light+Two|Advent+Pro:400,500|Annie+Use+Your+Telescope|Finger+Paint|The+Girl+Next+Door|Give+You+Glory' rel='stylesheet' type='text/css'>
 </head>
 <body>
+<header class="navbar  navbar-fixed-top" id="top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="../" class="navbar-brand">dalia<span>&amp;</span>daniel</a>
+    <div class="navbar-text navbar-right pull-right rightext">
+        faltan <a href="http://goo.gl/RX5iMH" target="_blank" class="header-days-left days-left"></a> d&iacute;as
+    </div>
+    </div>
+    <nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" style="height: 1px;">
+      <ul class="nav navbar-nav menu-nav">
+        <li><a href="/story">Nuestra historia</a></li>
+        <li><a href="/events">Eventos</a></li>
+        <li><a href="/gallery">Galer&iacute;a</a></li>
+        <li><a href="/contact">Contacto</a></li>
+        <li><a href="/guestbook">Libro de visitas</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-    <div class="container">
+    <div class="container main-container">
+
         <div class="header">
             <div class="logo pull-left">
                 <h1>Dalia &amp; Daniel</h1>
@@ -170,6 +197,7 @@
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script src="js/vendor/jquery-mobile.touch.js"></script>
 <script src="js/vendor/jquery.ui.touch-punch.min.js"></script>
 <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> 
 

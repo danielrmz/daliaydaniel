@@ -1,57 +1,10 @@
-.contact {
-  padding-top: 20px;
-}
-.contact .block {
-  width: 90%;
-  margin: 0 auto;
-}
-.contact .title {
-  text-transform: uppercase;
-  color: #17BFBD;
-  text-align: center;
-  padding: 10px;
-  font-size: 24px;
-  font-family: 'Pompiere', cursive;
-}
-.contact .text {
-  margin-top: 2px;
-  min-height: 80px;
-}
-.contact .icon {
-  display: block;
-  margin: 0 auto;
-  width: 46px;
-  height: 54px;
-  background: url(../../img/ico-contact-v2.png) no-repeat;
-}
-.contact .icon.correo {
-  background-position: 0 0;
-  float: left;
-}
-.contact .icon.mesa {
-  background-position: -46px 0;
-}
-.contact .icon.viaje {
-  background-position: -146px 0;
-  width: 75px;
-}
-.contact .message {
-  margin-top: 20px;
-}
-.contact .message.correo {
-  float: left;
-  margin-left: 20px;
-}
-.contact .message.viaje {
-  margin-top: 0;
-}
-.contact .message a {
-  color: black;
-}
-.contact .grand {
-  background: url(../../img/logo-grand.png);
-  width: 130px;
-  height: 20px;
-  margin: 0 auto;
-  display: inline-block;
-}
+.contact{padding-top:20px}.contact .block{width:90%;margin:0 auto}
+.contact .title{text-transform:uppercase;color:#17bfbd;text-align:center;padding:10px;font-size:24px;font-family:'Pompiere',cursive}
+.contact .text{margin-top:2px;min-height:80px}
+.contact .icon{display:block;margin:0 auto;width:46px;height:54px;background:url(../../img/ico-contact-v2.png) no-repeat}.contact .icon.correo{float:left}
+.contact .icon.mesa{background-position:-46px 0}
+.contact .icon.viaje{background-position:-146px 0;width:75px}
+.contact .message{margin-top:20px}.contact .message.correo{float:left;margin-left:20px}
+.contact .message.viaje{margin-top:0}
+.contact .message a{color:#000}
+.contact .grand{background:url(../../img/logo-grand.png);width:130px;height:20px;margin:0 auto;display:inline-block}

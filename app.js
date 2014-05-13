@@ -86,8 +86,8 @@ app.get('/:page', function(req, res) {
 		res.render("login.html", { callback: page, error: "", stdp: "", gallery: "" });
 		return;
 	}
-
-	res.renderPjax(page,{ callback: "", error: "", stdp: "", gallery: "" }); 
+	console.log(req.query);
+	res.renderPjax(page,{ callback: "", error: "", stdp: "", gallery: "", data: req.query }); 
 }); 
 
 app.get("/login", function(req, res) {
@@ -202,6 +202,45 @@ app.post("/guestbook/new", function(req, res) {
 	});
  	
 
+});
+
+app.get("/rsvp", function(req, res) { 
+	res.render("rsvp.html", { 
+		data: {
+			nombre: req.params.nombre,
+			apellido: req.params.apellido,
+			correo: req.params.correo,
+			invitados: req.params.invitados
+		},
+		callback: "", 
+		error: error, 
+		stdp: "", 
+		gallery: "" 
+	});	
+});
+
+app.post("/rsvp", function(req, res) {
+	var nombre = req.body.nombre;
+	var apellido = req.body.apellido;
+	var correo = req.body.correo;
+	var invitados = req.body.invitados;
+	var rsvp = req.body.rsvp;
+
+	console.log(req.body);
+	console.log("Sending...");
+	mg.sendText('daniel.rmz@gmail.com', 
+			['Dalia y Daniel <boda@daliaydaniel.com>'], 
+			'RSVP Dalia y Daniel - ' + nombre + " " + apellido, 
+			"Un invitado acaba de usar el RSVP.\n\nNombre: " + nombre + " " + apellido + "\n\nCorreo: " + correo + "\n\n# Invitados" + invitados + "\n\n RSVP: " + rsvp,
+			'no-reply@daliaydaniel.com', 
+			{},
+			function(err) {
+    			if (err) console.log('Oh noes: ' + err);
+    			else     console.log('Success sending the email.');
+			}
+	);
+	console.log("complete");
+	res.send(true);
 });
 
 // Start Application

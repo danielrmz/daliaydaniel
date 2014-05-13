@@ -5,13 +5,80 @@ $(function() {
 	DisplaySecretPanels();
 	InitializeViews();
 	InitializeGallery();
-	InitializeRsvp();
+	//InitializeRsvp();
 
 	$(".love").click(function() { 
 		$(".save").show().modal();
 	});
  
+
+	$("#carousel").swiperight(function() {  
+		$(this).carousel('prev');  
+	});  
+	$("#carousel").swipeleft(function() {  
+		$(this).carousel('next');  
+	});   
+
+	ResetRSVP();
 });
+
+
+function ResetRSVP() {
+	$(".rsvp-answer").removeClass("active");
+	$(".filter-si,.filter-no").hide();
+	$(".rsvp").show();
+	$(".form-rsvp input[type!=submit]").val("");
+	$(".btn-rsvp").removeClass("active");
+
+	$(".btn-rsvp").click(function() {  
+		$(".btn-rsvp").removeClass("active");
+		$(this).addClass("active");
+
+		var value = $(this).data("yesno");
+		$("#rsvp").val(value);
+		$(".filter-si,.filter-no").hide();
+		$(".filter-" + value).show();
+		$(".form-rsvp").slideDown(function() { 
+
+		});
+	});
+
+	$(".form-rsvp").submit(function(e) {
+
+		var rsvp = $("#rsvp").val(); 
+
+		var n = $("#txtNombre").val();
+		var a = $("#txtApellido").val();
+		var c = $("#txtCorreo").val();
+		var i = $("#txtInvitados").val();
+
+		if(!rsvp || !n || !a || !c || (rsvp == "si" && (!i || i <= 0))) {
+			e.preventDefault(); 
+			alert("Porfavor introduzca correctamente los datos");
+			return false;
+		}
+
+		if(rsvp != "no" && rsvp != "si") {
+			e.preventDefault(); 
+			alert("Porfavor indique si asistira o no.");
+			return false;
+		}
+
+		var data = { rsvp: rsvp, nombre: n, apellido: a, correo: c, noinvitados: i };
+ 
+ 		$.post("/rsvp", data).done(function(payload) { 
+
+			$(".rsvp-answer").addClass("active");
+			$(".rsvp-"+ rsvp).show();
+			$(".rsvp").hide();
+
+ 		});
+
+		
+		e.preventDefault(); 
+		return false;
+	});
+}
 
 preloadImages();
 
@@ -80,20 +147,23 @@ function InitializeGallery() {
 				return true;
 			} else {
 				//
-				$("#tS2").thumbnailScroller({
-			        scrollerType: "clickButtons",
-			        scrollerOrientation: "horizontal",
-			        scrollSpeed: 2,
-			        scrollEasing: "easeOutCirc",
-			        scrollEasingAmount: 600,
-			        acceleration: 4,
-			        scrollSpeed: 800,
-			        noScrollCenterSpace: 10,
-			        autoScrolling: 0,
-			        autoScrollingSpeed: 2000,
-			        autoScrollingEasing: "easeInOutQuad",
-			        autoScrollingDelay: 500
-			    });
+				setTimeout(function() { 
+					$("#tS2").thumbnailScroller({
+				        scrollerType: "clickButtons",
+				        scrollerOrientation: "horizontal",
+				        scrollSpeed: 2,
+				        scrollEasing: "easeOutCirc",
+				        scrollEasingAmount: 600,
+				        acceleration: 4,
+				        scrollSpeed: 800,
+				        noScrollCenterSpace: 10,
+				        autoScrolling: 0,
+				        autoScrollingSpeed: 2000,
+				        autoScrollingEasing: "easeInOutQuad",
+				        autoScrollingDelay: 500
+				    });
+				}
+			    , 1000);
 			 //scrollerInitialized = true;
 			}
 		}).modal();
@@ -160,7 +230,7 @@ function InitializeGallery() {
  */
 function InitializeViews() {
 	$(window).resize(DisplaySecretPanels);
-	$(document).pjax('.menu a', '.content');
+	$(document).pjax('.menu a, .menu-nav a', '.content');
 
 	$(document).on('pjax:send', function(pjax) {
 		var $target = $(arguments[2].target);
@@ -177,6 +247,8 @@ function InitializeViews() {
 
 	$(document).on('pjax:complete', function() {
 		var $target = $(arguments[3].target); 
+		$(".navbar-collapse").collapse('hide');
+		ResetRSVP();
 	});
 
 	$(document).on('pjax:timeout', function(e) {  
@@ -254,9 +326,10 @@ function CalculateCountdown() {
 	$countdown.attr("title", (parseInt(daysLeft) / 30) + " meses");
 }
 
+
 /** 
  * Initializes rsvp window
-*/
+
 function InitializeRsvp() {
 	$(".rsvp").click(function() { 
 		$(".modal-rsvp").modal();
@@ -276,7 +349,7 @@ function InitializeRsvp() {
 		});
 	});
 }
-
+*/
 /**
  * Preloads a set of images.
  */

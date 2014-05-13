@@ -1,0 +1,74 @@
+
+@media all and (max-width: 768px) {
+	.header {
+		display: none;
+	}
+	.navbar {
+		display: block;
+	}
+}
+@media all and (min-width: 768px) {
+	.header {
+		display: block;
+	}
+	.navbar {
+		display: none;
+	}
+	h2.title {
+		display: none;
+	}
+}
+@media all and (max-width: 768px) {
+	.menu {
+		display: none;
+	}
+	.countdown {
+		display: none;
+	}
+	.main-container {
+		padding: 0;
+		margin-top: 40px;
+	}
+	.banner.small .sticker {
+		top:12px;
+		left:12px;
+	}
+	#carousel .item {
+		background-position: left;
+	}
+	#carousel .item.bg1, #carousel .item.bg6 {
+
+		background-position: right;
+	}  
+	#carousel .item.bg2 {
+		background-position: center; 
+	}
+	.content {
+		margin-top: 0;
+		padding-left: 20px;
+	}
+}
+
+@media all and (max-width: 500px) {
+	.sticker {
+		display: none;
+	}
+}
+
+
+@media all and (max-width: 450px) {
+	.events .slogan {
+		display: none;
+	}
+
+	.rsvp .btn-rsvp {
+		width: 98%;
+	}
+}
+
+
+@media all and (max-width: 630px) {
+	#carousel .item {
+		background-position: center; 
+	}
+}
