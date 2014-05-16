@@ -85,10 +85,10 @@ app.get('/:page', function(req, res) {
 		stdp: "", 
 		gallery: "", 
 		data: {
-			nombre: req.query.nombre,
-			apellido: req.query.apellido,
-			correo: req.query.correo,
-			invitados: req.query.invitados
+			nombre: req.query.nombre || "",
+			apellido: req.query.apellido|| "",
+			correo: req.query.correo|| "",
+			invitados: req.query.invitados|| ""
 		}
 	}); 
 }); 
@@ -210,10 +210,10 @@ app.post("/guestbook/new", function(req, res) {
 app.get("/rsvp", function(req, res) { 
 	res.render("rsvp.html", { 
 		data: {
-			nombre: req.params.nombre,
-			apellido: req.params.apellido,
-			correo: req.params.correo,
-			invitados: req.params.invitados
+			nombre: req.params.nombre|| "",
+			apellido: req.params.apellido|| "",
+			correo: req.params.correo|| "",
+			invitados: req.params.invitados|| ""
 		},
 		callback: "", 
 		error: error, 
