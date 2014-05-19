@@ -246,6 +246,37 @@ app.post("/rsvp/save", function(req, res) {
     			else     console.log('Success sending the email.');
 			}
 	);
+
+	mg.sendText("rsvp@daliaydaniel.com", 
+				["boda@daliaydaniel.com"], 
+				"Boda Dalia y Daniel - Información", 
+				"<h3>Nos da mucho gusto contar con tu presencia en este gran día que comenzamos nuestra vida juntos. A continuación te presentamos información que te podría ser de utilidad durante ese día. </h3>
+<hr />
+<br />
+<strong>Ceremonia religiosa</strong><br />
+Lugar: Sagrario Catedral Metropolitana de Monterrey<br />
+Hora: 6:00pm<br />
+Mapa: http://goo.gl/PNhRZp<br />
+Estacionamiento: Nosotros recomendamos el estacionamiento a un lado de Marco. <br />
+<br />
+<strong>Recepción</strong><br />
+Lugar: Grand 2411<br />
+Hora: 8:30pm<br />
+Mapa: http://goo.gl/maps/lQX2w<br />
+Estacionamiento: Podrás estacionarte adentro de Paseo Tec (cuota especial al hospedarse en el hotel). <br />
+
+<strong>Hospedaje:</strong><br />
+Grand 2411 Fiesta Inn Paseo Tec<br />
+Clave de Grupo: GY3DG@MTT<br />
+<br />
+Cualquier duda, no dudes en marcarnos o escribirnos a boda@daliaydaniel.com<br />
+<strong>Dalia y Daniel</strong>
+",	 
+				{ 
+					header: { "X-Mailgun-Campaign-Id": "cf84r" } 
+				}
+	);
+
 	console.log("...complete");
 	res.send(true);
 });
