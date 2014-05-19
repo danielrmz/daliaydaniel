@@ -326,10 +326,12 @@ body {
 }
 
 .rsvp-text, .rsvp-answer h4 {
-	font-family: Oxygen, sans-serif !important;
+	font-family: Oxygen, sans-serif;
 	font-weight: none;
 }
 
 .rsvp-sign {
 	font-weight: bold;
+	color: #13BFBC;
+	font-family: 'Shadows Into Light Two' !important;
 }
