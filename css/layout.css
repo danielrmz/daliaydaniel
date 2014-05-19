@@ -324,3 +324,12 @@ body {
 .rsvp-answer {
 	margin-top: 50px;
 }
+
+.rsvp-text, .rsvp-answer h4 {
+	font-family: Oxygen, sans-serif !important;
+	font-weight: none;
+}
+
+.rsvp-sign {
+	font-weight: bold;
+}
