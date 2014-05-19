@@ -18,30 +18,30 @@
 		<div class="form-group">
 		<label for="inputEmail3" class="col-xs-2 control-label">Nombre</label>
 			<div class="col-xs-9">
-				<input type="text" class="form-control" value="<%=data.nombre%>"  required="true" id="txtNombre">
+				<input type="text" name="txtNombre" class="form-control" value="<%=data.nombre%>"  required="true" id="txtNombre">
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="inputPassword3" class="col-xs-2 control-label">Apellido</label>
 			<div class="col-xs-9">
-				<input type="text" class="form-control"  value="<%=data.apellido %>" required="true" id="txtApellido">
+				<input type="text" name="txtApellido" class="form-control"  value="<%=data.apellido %>" required="true" id="txtApellido">
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="inputPassword3" class="col-xs-2 control-label">Correo</label>
 			<div class="col-xs-9">
-				<input type="email" class="form-control" value="<%=data.correo%>" required="true" id="txtCorreo">
+				<input type="email" name="txtCorreo" class="form-control" value="<%=data.correo%>" required="true" id="txtCorreo">
 			</div>
 		</div>
 		<div class="form-group filter-si" style="display:none;">
 			<label for="inputPassword3" class="col-xs-2 control-label">#</label>
 			<div class="col-xs-6">
-				<input type="number" class="form-control" required="true" value="<%=data.invitados%>" id="txtInvitados" placeholder="# de invitados" min="1">
+				<input type="number" name="txtInvitados" class="form-control" value="<%=data.invitados%>" id="txtInvitados" placeholder="# de invitados" min="1">
 			</div>
 		</div>
 		<div class="form-group">
 			<div class="col-xs-11">
-				<input type="submit" class="btn btn-primary pull-right" value="Enviar" />
+				<input type="submit" name="cmdEnviar" class="btn btn-primary pull-right" value="Enviar" />
 				<input type="hidden" value="" id="rsvp" name="rsvp">
 			</div>
 		</div>
