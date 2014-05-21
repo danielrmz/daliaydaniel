@@ -12,7 +12,8 @@ var path     = require('path'),
     mongoose = require('mongoose'),
     mailgun  = require('mailgun').Mailgun,
     sanitize = require('validator').sanitize,
-    geoip    = require('geoip-lite')
+    geoip    = require('geoip-lite'),
+    fs       = require('fs')
     ;
 
 var app     = express();
@@ -222,6 +223,66 @@ app.get("/rsvp", function(req, res) {
 	});	
 });
 
+function sendAdditionalInfo(to) {
+	
+	var msg =			
+			"From: rsvp@daliaydaniel.com"+
+			"\nTo:"+to +
+			"\nSubject: Boda Dalia y Daniel - Informacion" +
+			"\nX-Mailgun-Campaign-Id: cf84r"+
+			"\nContent-Type: multipart/mixed; boundary=001a11397d96061d0604f9e4e102"+
+			"\n--001a11397d96061d0604f9e4e102"+
+
+			"\nContent-Type: multipart/alternative; boundary=001a11397d96061cfb04f9e4e100"+
+			"\n"+
+			"\n--001a11397d96061cfb04f9e4e100"+
+			"\nContent-Type: text/plain; charset=UTF-8"+
+			"\n"+
+			"\nInvitacion Dalia y Daniel"+
+			"\n"+
+			"\n--001a11397d96061cfb04f9e4e100"+
+			"\nContent-Type: text/html; charset=UTF-8"+
+			"\n"+
+			"\n<h3>Nos da mucho gusto contar con tu presencia en este gran día que comenzamos nuestra vida juntos.  "+
+			"\n<br />A continuación te presentamos información que te podría ser de utilidad durante ese día. </h3><hr /><br /> "+
+			"\n<strong>Ceremonia Religiosa</strong><br /> "+
+			"\nLugar: Sagrario Catedral Metropolitana de Monterrey<br /> "+
+			"\nHora: 6:00pm<br />Mapa: http://goo.gl/PNhRZp<br /> "+
+			"\nEstacionamiento: Nosotros recomendamos el estacionamiento a un lado de Marco. "+
+			"\n<br /><br /><strong>Recepción</strong><br /> "+
+			"\nLugar: Grand 2411<br />Hora: 8:00pm<br />Mapa: http://goo.gl/maps/lQX2w<br /> "+
+			"\nEstacionamiento: Podrás estacionarte adentro de Paseo Tec (cuota especial al hospedarse en el hotel). <br /><br /> "+
+			"\n<strong>Hospedaje:</strong><br />Grand 2411 Fiesta Inn Paseo Tec<br />Clave de Grupo: GY3DG@MTT<br /><br />"+
+			"\nCualquier duda, no dudes en marcarnos o escribirnos a boda@daliaydaniel.com<br /><br /><strong>Dalia y Daniel</strong>"+
+			"\n"+
+			"\n--001a11397d96061cfb04f9e4e100--"+
+			"\n--001a11397d96061d0604f9e4e102"+
+			"\nContent-Type: image/png; name=InvitacionDD.png"+
+			"\nContent-Disposition: attachment; filename=InvitacionDD.png"+
+			"\nContent-Transfer-Encoding: base64"+
+			"\nX-Attachment-Id: f_hvgdlb1y0"+
+			"\n"+
+			"{attachment}"+
+			"\n"+
+			"--001a11397d96061d0604f9e4e102--";
+
+	fs.readFile("img/InvitacionDD.png", function read(err, data) {
+		if (err) {
+        	throw err;
+    	}
+
+    	var att = data.toString("base64");
+    	var xmsg = msg.replace("{attachment}", att);
+
+		mg.sendRaw("rsvp@daliaydaniel.com", [to], xmsg);
+	});
+}
+
+app.get("/rsvp/test", function(req, res) { 
+	sendAdditionalInfo("daniel.rmz@gmail.com");
+	res.send(true);
+});
+
 app.post("/rsvp/save", function(req, res) {
 	var nombre = req.body.nombre;
 	var apellido = req.body.apellido;
@@ -247,14 +308,7 @@ app.post("/rsvp/save", function(req, res) {
 			}
 	);
 
-	mg.sendText("rsvp@daliaydaniel.com", 
-				["boda@daliaydaniel.com"], 
-				"Boda Dalia y Daniel - Información", 
-				"<h3>Nos da mucho gusto contar con tu presencia en este gran día que comenzamos nuestra vida juntos. A continuación te presentamos información que te podría ser de utilidad durante ese día. </h3><hr /><br /><strong>Ceremonia religiosa</strong><br />Lugar: Sagrario Catedral Metropolitana de Monterrey<br />Hora: 6:00pm<br />Mapa: http://goo.gl/PNhRZp<br />Estacionamiento: Nosotros recomendamos el estacionamiento a un lado de Marco. <br /><br /><strong>Recepción</strong><br />Lugar: Grand 2411<br />Hora: 8:30pm<br />Mapa: http://goo.gl/maps/lQX2w<br />Estacionamiento: Podrás estacionarte adentro de Paseo Tec (cuota especial al hospedarse en el hotel). <br /><strong>Hospedaje:</strong><br />Grand 2411 Fiesta Inn Paseo Tec<br />Clave de Grupo: GY3DG@MTT<br /><br />Cualquier duda, no dudes en marcarnos o escribirnos a boda@daliaydaniel.com<br /><strong>Dalia y Daniel</strong>",	 
-				{ 
-					header: { "X-Mailgun-Campaign-Id": "cf84r" } 
-				}
-	);
+	sendAdditionalInfo(correo); 
 
 	console.log("...complete");
 	res.send(true);
